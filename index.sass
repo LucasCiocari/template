@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap')
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,700&display=swap')
+
+// Cartas
+.app
+    & .carta
+        & #nomeFuncionario, & #nomePadrinho
+            letter-spacing: 4px
+            margin-bottom: 3px
+            text-transform: uppercase
+            white-space: nowrap
+        & #nomeFuncionario
+            font-size: 20px
+        & #nomePadrinho
+            font-size: 18px
+    & .carta--azul
+        & .form-control
+            background-color: #1f70c1
+            border: 1px solid #1f70c1
+            color: white
+            padding: 0px
+            &::placeholder
+                color: white
+    & .carta--branca
+        & .form-control
+            background-color: white
+            border: 1px solid white
+
+.app
+    margin: auto
+    width: 80%
+    & .cabecalho
+        background-color: #1f70c1
+        padding: 40px 0px 40px 0px
+        text-align: center
+        & h1
+            color: white
+            font-family: 'IBM Plex Serif', serif
+            text-transform: uppercase
+    & .logo
+        display: flex
+        padding: 25px 0px 25px 0px
+        & img
+            height: 50px
+        & .sicredi
+            flex: 1
+            padding-left: 15px
+            text-align: left
+        & .ibm
+            flex: 1
+            padding-right: 15px
+            text-align: right
+    & .carta
+        display: flex
+        & .informacoes
+            flex: 1
+            padding: 10px 15px 10px 15px
+            & .nome, & .padrinho
+                letter-spacing: 4px
+                text-transform: uppercase
+                white-space: nowrap
+            & .nome
+                font-size: 20px
+            & .padrinho
+                font-size: 18px
+            & .scrum
+                margin-top: 20px
+        & .foto
+            flex: 1
+            & .perfil
+                padding: 10px 15px 10px 15px
+                text-align: right
+                & img
+                    border-radius: 50%
+                    width: 40%
+    & .carta--azul
+        background-color: #1f70c1
+        color: white
+    & .carta--branca
+        background-color: white
+        color: black
