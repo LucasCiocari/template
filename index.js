@@ -7,6 +7,7 @@ import uuid from "uuid/v1"; // gera hash a partir do timestamp
 import logo from './images/sicredi.png';
 import logoIBM from './images/IBM.png';
 import henrique from './images/henrique.jpg';
+import generic from './images/ico.png';
 
 
 import "./index.scss";
@@ -14,15 +15,33 @@ import "./index.scss";
 class App extends React.Component {
     state = {
         items : [
-            {id: uuid()}
+            {id: uuid(), image: generic}
         ]
+    }
+
+    handleChange = (id, file) => {
+        this.setState( prevState => {
+            let reader = new FileReader();
+            const newItems = prevState.items;
+            const index = newItems.findIndex(card => card.id === id);
+ 
+            
+
+                newItems[index].image = URL.createObjectURL(file);
+            
+            
+
+            return {
+                items : newItems
+            };
+        });
     }
 
     handleAddCard = () => {
         this.setState(
             prevState => {
                 return{
-                    items: prevState.items.concat({id: uuid()})
+                    items: prevState.items.concat({id: uuid(), image: generic})
                 }
             }
         )
@@ -33,7 +52,7 @@ class App extends React.Component {
             <div className="container">
                 <div className="app" id="aplicacao">
                     <Header/>
-                    <CardList cards={this.state.items}/>
+                    <CardList cards={this.state.items} handleChange={this.handleChange}/>
                     <Footer/>
                     <Controller onAddCard={this.handleAddCard}/>
                 </div>
@@ -42,12 +61,12 @@ class App extends React.Component {
     }
 }
 
-const CardList = ({cards}) => (
+const CardList = ({cards, handleChange}) => (
     <React.Fragment>
     <div className="card-list">
         {
             cards.map((card, index) => 
-                <Card key={card.id} index={index}/>
+                <Card key={card.id} index={index} card={card} handleChange={handleChange}/>
             )
         }
     </div>
@@ -82,7 +101,7 @@ const Footer = () => {
     
 }
 
-const Card = ({index}) => {
+const Card = ({index, card, handleChange}) => {
     
     return (
         <div className={classNames("carta", { "carta--azul" : (index%2==0)}, {"carta--branca" : (index%2==1)})}>
@@ -101,7 +120,17 @@ const Card = ({index}) => {
                 </div>
             </div>
             <div className="foto">
-                <div className="perfil"><img src={henrique} alt="Foto" /></div>
+                <div className="perfil">
+                <label>
+                        <input className="hideinput" type="file" name="image" id="image"
+                         onChange={ (event) => {
+                                handleChange(card.id, event.target.files[0]);
+                            }
+                        }
+                        />
+                        <img src={card.image} alt="Foto"></img>
+                    </label>
+                </div>
             </div>
         </div>	
 )
