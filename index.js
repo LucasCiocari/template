@@ -13,7 +13,19 @@ import "./index.scss";
 
 class App extends React.Component {
     state = {
-        items : []
+        items : [
+            {id: uuid()}
+        ]
+    }
+
+    handleAddCard = () => {
+        this.setState(
+            prevState => {
+                return{
+                    items: prevState.items.concat({id: uuid()})
+                }
+            }
+        )
     }
 
     render() {
@@ -21,12 +33,26 @@ class App extends React.Component {
             <div className="container">
                 <div className="app" id="aplicacao">
                     <Header/>
-                    <Card/>
+                    <CardList cards={this.state.items}/>
+                    <Footer/>
+                    <Controller onAddCard={this.handleAddCard}/>
                 </div>
             </div>
         );
     }
 }
+
+const CardList = ({cards}) => (
+    <React.Fragment>
+    <div className="card-list">
+        {
+            cards.map((card, index) => 
+                <Card key={card.id} index={index}/>
+            )
+        }
+    </div>
+    </React.Fragment>
+)
 
 const Header = () => (
     <React.Fragment>
@@ -40,8 +66,26 @@ const Header = () => (
     </React.Fragment>
 )
 
-const Card = () => (
-        <div className="carta carta--azul">
+const Controller = ({onAddCard}) => (
+    <div>
+        <button className="card-list-button" onClick={onAddCard}>Teste</button> 
+    </div>
+)
+
+const Footer = () => {
+
+            return ( 
+            <div className="cabecalho">
+                <h1>MUITO SUCESSO</h1>
+            </div>
+        );
+    
+}
+
+const Card = ({index}) => {
+    
+    return (
+        <div className={classNames("carta", { "carta--azul" : (index%2==0)}, {"carta--branca" : (index%2==1)})}>
             <div className="informacoes">
                 <div className="nome">
                     <input type="text" className="form-control form-control--azul" id="nomeFuncionario" placeholder="Nome Completo"/>
@@ -61,6 +105,6 @@ const Card = () => (
             </div>
         </div>	
 )
-
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));
