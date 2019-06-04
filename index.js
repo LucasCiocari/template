@@ -21,15 +21,10 @@ class App extends React.Component {
 
     handleChange = (id, file) => {
         this.setState( prevState => {
-            let reader = new FileReader();
             const newItems = prevState.items;
             const index = newItems.findIndex(card => card.id === id);
  
-            
-
-                newItems[index].image = URL.createObjectURL(file);
-            
-            
+            newItems[index].image = URL.createObjectURL(file);
 
             return {
                 items : newItems
@@ -49,14 +44,18 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="app" id="aplicacao">
-                    <Header/>
-                    <CardList cards={this.state.items} handleChange={this.handleChange}/>
-                    <Footer/>
+            <React.Fragment>
+                <div className="container">
+                    <div className="app" id="aplicacao">
+                        <Header/>
+                        <CardList cards={this.state.items} handleChange={this.handleChange}/>
+                        {/* <Footer size={this.state.items.length}/> */}
+                    </div>
+                </div>
+                <div className="container">
                     <Controller onAddCard={this.handleAddCard}/>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }
@@ -70,6 +69,11 @@ const CardList = ({cards, handleChange}) => (
             )
         }
     </div>
+    <div className={classNames("footer", {"footer--branco" : cards.length%2==1}, {"footer--azul" : cards.length%2==0})}>
+            <h1 class={classNames("font", {"font--branco" : cards.length%2==1}, {"font--azul" : cards.length%2==0})}>
+                MUITO SUCESSO
+            </h1>
+        </div>
     </React.Fragment>
 )
 
@@ -90,16 +94,6 @@ const Controller = ({onAddCard}) => (
         <button className="card-list-button" onClick={onAddCard}>Teste</button> 
     </div>
 )
-
-const Footer = () => {
-
-            return ( 
-            <div className="cabecalho">
-                <h1>MUITO SUCESSO</h1>
-            </div>
-        );
-    
-}
 
 const Card = ({index, card, handleChange}) => {
     

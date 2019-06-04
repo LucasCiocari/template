@@ -29,6 +29,27 @@
 .app {
   margin: auto;
   width: 80%;
+  border: solid 1px gray;
+}
+.app .footer {
+  padding: 40px 0px 40px 0px;
+  text-align: center;
+}
+.app .footer .font {
+  font-family: "IBM Plex Serif", serif;
+  text-transform: uppercase;
+}
+.app .footer--azul {
+  background-color: #1f70c1;
+}
+.app .footer--azul .font--azul {
+  color: #ffffff;
+}
+.app .footer--branco {
+  background-color: #ffffff;
+}
+.app .footer--branco .font--branco {
+  color: #1f70c1;
 }
 .app .cabecalho {
   background-color: #1f70c1;
@@ -80,17 +101,23 @@
 }
 .app .carta .foto {
   flex: 1;
+  text-align: right;
 }
 .app .carta .foto .perfil {
   padding: 10px 15px 10px 15px;
   text-align: right;
+  width: 50%;
+  display: inline-block;
+  margin-right: 15px;
 }
 .app .carta .foto .perfil .hideinput {
   display: none;
 }
 .app .carta .foto .perfil img {
   border-radius: 50%;
-  width: 40%;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 .app .carta--azul {
   background-color: #1f70c1;
