@@ -69,12 +69,17 @@ const CardList = ({cards, handleChange}) => (
             )
         }
     </div>
-    <div className={classNames("footer", {"footer--branco" : cards.length%2==1}, {"footer--azul" : cards.length%2==0})}>
-            <h1 class={classNames("font", {"font--branco" : cards.length%2==1}, {"font--azul" : cards.length%2==0})}>
-                MUITO SUCESSO
-            </h1>
-        </div>
+    <Footer length={cards.length}/>
+   
     </React.Fragment>
+)
+
+const Footer = ({length}) => (
+    <div className={classNames("footer", {"footer--branco" : length%2==1}, {"footer--azul" : length%2==0})}>
+        <h1 class={classNames("font", {"font--branco" : length%2==1}, {"font--azul" : length%2==0})}>
+            MUITO SUCESSO
+        </h1>
+    </div>
 )
 
 const Header = () => (
