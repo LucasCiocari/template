@@ -2,11 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";
 import uuid from "uuid/v1"; // gera hash a partir do timestamp
-
 //Images
 import logo from './images/sicredi.png';
 import logoIBM from './images/IBM.png';
-import henrique from './images/henrique.jpg';
 import generic from './images/ico.png';
 
 
@@ -23,8 +21,9 @@ class App extends React.Component {
         this.setState( prevState => {
             const newItems = prevState.items;
             const index = newItems.findIndex(card => card.id === id);
- 
-            newItems[index].image = URL.createObjectURL(file);
+            if(file){
+                newItems[index].image = URL.createObjectURL(file);
+            }
 
             return {
                 items : newItems
@@ -76,11 +75,12 @@ const CardList = ({cards, handleChange}) => (
 
 const Footer = ({length}) => (
     <div className={classNames("footer", {"footer--branco" : length%2==1}, {"footer--azul" : length%2==0})}>
-        <h1 class={classNames("font", {"font--branco" : length%2==1}, {"font--azul" : length%2==0})}>
+        <h1 className={classNames("font", {"font--branco" : length%2==1}, {"font--azul" : length%2==0})}>
             MUITO SUCESSO
         </h1>
     </div>
 )
+
 
 const Header = () => (
     <React.Fragment>
@@ -96,8 +96,9 @@ const Header = () => (
 
 const Controller = ({onAddCard}) => (
     <div>
-        <button className="card-list-button" onClick={onAddCard}>Teste</button> 
+        <button className="card-list-button" onClick={onAddCard}>MAIS UM</button> 
     </div>
+
 )
 
 const Card = ({index, card, handleChange}) => {
