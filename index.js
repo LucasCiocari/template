@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";
 import uuid from "uuid/v1"; // gera hash a partir do timestamp
+import html2canvas from "html2canvas";
+import saveAs from "file-saver";
+
 //Images
 import logo from './images/sicredi.png';
 import logoIBM from './images/IBM.png';
@@ -44,8 +47,8 @@ class App extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container">
-                    <div className="app" id="aplicacao">
+                <div className="container" id="aplicacao">
+                    <div className="app">
                         <Header/>
                         <CardList cards={this.state.items} handleChange={this.handleChange}/>
                         {/* <Footer size={this.state.items.length}/> */}
@@ -96,7 +99,23 @@ const Header = () => (
 
 const Controller = ({onAddCard}) => (
     <div>
-        <button className="card-list-button" onClick={onAddCard}>MAIS UM</button> 
+        <button className="card-list-button" onClick={onAddCard}>ADD</button> 
+
+        <button className="save-photo" onClick={
+                () => {
+                    window.scrollTo(0,0);  
+                    const element = document.querySelector("#aplicacao");
+                    html2canvas(element).then(
+                    canvas => { 
+                        
+                        canvas.toBlob(function(blob) {
+                            saveAs(blob, "pretty image.png");
+                        });
+                    }
+                );
+            }
+        }>PRINT
+        </button>
     </div>
 
 )
