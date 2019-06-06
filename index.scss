@@ -3,6 +3,27 @@
 .app .carta .div-do-select {
   display: grid;
 }
+
+// Botoes
+.botoes{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  .btn{
+    border-radius: 0px
+  }
+  .btn-add, .btn-print{
+    color: white;
+    display: block;
+    width: 100%;
+  }
+  .btn-add{
+    background-color: #f44242;
+  }
+  .btn-print{
+    background-color: #19d639;
+  }
+}
 .app .carta .div-do-select .select-image {
   display: table-caption;
   text-align: center;
@@ -18,8 +39,8 @@
   display: none;
 }
 .app .carta .div-do-select .imagem-selecionada {
-  padding: 10px 15px 10px 15px;
-  border-radius: 25%;
+  border-radius: 50%;
+  margin-top: 10px;
   position: relative;
   float: left;
   width: 200px;
@@ -139,9 +160,10 @@
   display: none;
 }
 .app .carta .foto .perfil img {
-  border-radius: 25%;
+  border-radius: 50%;
   position: relative;
   float: left;
+  object-fit: cover;
   width: 200px;
   height: 200px;
   cursor: pointer;
