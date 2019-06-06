@@ -4,12 +4,10 @@ import classNames from "classnames";
 import uuid from "uuid/v1"; // gera hash a partir do timestamp
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faCamera } from '@fortawesome/free-solid-svg-icons'
-import ReactTooltip from 'react-tooltip' 
-
-const iconeAdicionar = <FontAwesomeIcon icon={faPlus} size='2x' />
-const iconePrint = <FontAwesomeIcon icon={faCamera} size='2x'/>
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faCamera } from '@fortawesome/free-solid-svg-icons';
+import ReactTooltip from 'react-tooltip';
+import GoogleFontLoader from 'react-google-font-loader'; 
 
 //Images
 import logo from './images/sicredi.png';
@@ -18,9 +16,21 @@ import generic from './images/ico.png';
 import assis from './images/assis.jpg';
 import digital from './images/digital.jpg';
 import ibmp from './images/IBM.jpg';
-
+// import downtownibm from '/images/downtownibm.xxx';
 
 import "./index.scss";
+
+
+const iconeAdicionar = <FontAwesomeIcon icon={faPlus} size='2x' />
+const iconePrint = <FontAwesomeIcon icon={faCamera} size='2x'/>
+const fontNames = 
+<GoogleFontLoader fonts={[
+        {
+            font: 'Roboto Mono',
+            weights: [500]
+        }
+    ]
+}/>
 
 class App extends React.Component {
     state = {
@@ -120,7 +130,13 @@ const Controller = ({onAddCard}) => (
                 () => {
                     window.scrollTo(0,0);  
                     const element = document.querySelector("#aplicacao");
-                    html2canvas(element).then(
+                    html2canvas(element, 
+                        {
+                            letterRendering:true,
+                            letterSpacing: true,
+                            letterStyling: true
+                        }
+                        ).then(
                     canvas => { 
                         
                         canvas.toBlob(function(blob) {
@@ -155,6 +171,10 @@ class Card extends React.Component {
     if(event.target.value == "ibmp") {
         this.setState({ image: ibmp });
     }
+
+    if(event.target.value == "downtownibm") {
+        this.setState({ image: downtownibm });
+    }
   }
 
 
@@ -181,12 +201,13 @@ class Card extends React.Component {
             </div>
             <div className="div-do-select">
               <img className="imagem-selecionada" src={image} alt="sicredi"/>
-              <select className="select-image" value={value} onChange={ event => {
+              <select className={classNames({ "select-image--azul" : (index%2==0)}, {"select-image--branco" : (index%2==1)})} value={value} onChange={ event => {
                   this.handleChangeMap(event);
               }}>
                 <option value="assis">CAS - Assis Brasil</option>
                 <option value="digital">PUC - Sicredi Digital</option>
                 <option value="ibmp">IBM Filial</option>
+                <option value="downtownibm">CAS - Alberto Bins</option>
               </select>
             </div>
             <div className="foto">
