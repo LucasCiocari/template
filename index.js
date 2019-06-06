@@ -4,6 +4,12 @@ import classNames from "classnames";
 import uuid from "uuid/v1"; // gera hash a partir do timestamp
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faCamera } from '@fortawesome/free-solid-svg-icons'
+import ReactTooltip from 'react-tooltip' 
+
+const iconeAdicionar = <FontAwesomeIcon icon={faPlus} size='2x' />
+const iconePrint = <FontAwesomeIcon icon={faCamera} size='2x'/>
 
 //Images
 import logo from './images/sicredi.png';
@@ -101,10 +107,16 @@ const Header = () => (
 )
 
 const Controller = ({onAddCard}) => (
-    <div>
-        <button className="card-list-button" onClick={onAddCard}>ADD</button> 
+    <div className="botoes">
+        <ReactTooltip id='adicionar' type='error' effect='solid'>
+            <span>Adicionar Carta</span>
+        </ReactTooltip>
+        <ReactTooltip id='print' type='success' effect='solid'>
+            <span>Salvar como Imagem</span>
+        </ReactTooltip>
+        <button className="card-list-button btn btn-add" data-tip data-for="adicionar" onClick={onAddCard}>{iconeAdicionar}</button> 
 
-        <button className="save-photo" onClick={
+        <button className="save-photo btn btn-print" data-tip data-for="print" onClick={
                 () => {
                     window.scrollTo(0,0);  
                     const element = document.querySelector("#aplicacao");
@@ -117,7 +129,7 @@ const Controller = ({onAddCard}) => (
                     }
                 );
             }
-        }>PRINT
+        }>{iconePrint}
         </button>
     </div>
 
