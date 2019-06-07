@@ -1,6 +1,9 @@
 .app .carta .div-do-select {
   display: grid;
 }
+.app .carta .div-do-select .text-styling {
+  font-family: "Roboto", sans-serif;
+}
 .app .carta .div-do-select .select-image--azul {
   display: table-caption;
   text-align: center;
@@ -39,7 +42,6 @@
 }
 .app .carta #nomeFuncionario, .app .carta #nomePadrinho {
   margin-bottom: 3px;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 .app .carta #nomeFuncionario {
@@ -74,7 +76,7 @@
   text-align: center;
 }
 .app .footer .font {
-  font-family: "Varela", sans-serif;
+  font-family: "Roboto Slab", serif;
   text-transform: uppercase;
 }
 .app .footer--azul {
@@ -96,7 +98,7 @@
 }
 .app .cabecalho h1 {
   color: white;
-  font-family: "Varela", sans-serif;
+  font-family: "Roboto Slab", serif;
   text-transform: uppercase;
 }
 .app .logo {
@@ -122,11 +124,10 @@
 .app .carta .informacoes {
   flex: 1;
   padding: 10px 15px 10px 15px;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 .app .carta .informacoes .nome, .app .carta .informacoes .padrinho {
   letter-spacing: 4px;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 .app .carta .informacoes .nome {

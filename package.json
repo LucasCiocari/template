@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build"
+    "start": "parcel ./public/index.html",
+    "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build && bx target --cf && bx app push teste-ibmtemplates"
   },
   "author": "Andrei Cruz, Lucas Ciocari, Thiago Miranda",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "classnames": "^2.2.6",
     "file-saver": "^2.0.2",
     "html2canvas": "^1.0.0-rc.3",
+    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-font-loader": "^1.0.5",
@@ -28,8 +29,22 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.2.0",
     "parcel-bundler": "^1.12.3",
     "prettier": "1.17.1",
+    "react-scripts": "^3.0.1",
     "sass": "^1.20.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
