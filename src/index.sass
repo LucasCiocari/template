@@ -1,34 +1,44 @@
 // Cartas
+
+$card-hf-font: 'Roboto Slab'
+$card-hf-font-type: serif
+
+.botoes
+    position: fixed
+    right: 0
+    top: 50%
+    & .btn
+        border-radius: 0px
+    & .btn-add, & .btn-print
+        color: white
+        display: block
+        width: 100%
+    & .btn-add
+        background-color: #f44242
+    & .btn-print
+        background-color: #19d639
+
 .app
     & .carta
         & .div-do-select
             display: grid
             & .text-styling
                 font-family: 'Roboto', sans-serif
-            & .select-image--azul
                 display: table-caption
                 text-align: center
                 border: none
-                background-color: #1f70c1
-                color: white
                 -webkit-appearance: none
                 -moz-appearance: none
                 text-indent: 1px
                 text-overflow: ''
                 &::-ms-expand 
                     display: none
+            & .select-image--azul
+                background-color: #1f70c1
+                color: white      
             & .select-image--branco
-                display: table-caption
-                text-align: center
-                border: none
                 background-color: #ffffff
                 color: #495057
-                -webkit-appearance: none
-                -moz-appearance: none
-                text-indent: 1px
-                text-overflow: ''
-                &::-ms-expand 
-                    display: none
             & .imagem-selecionada
                 padding: 12px 0px 0px 0px
                 border-radius: 25%
@@ -67,7 +77,7 @@
         padding: 40px 0px 40px 0px
         text-align: center
         & .font
-            font-family: 'Roboto Slab', serif
+            font-family: $card-hf-font, $card-hf-font-type
             text-transform: uppercase
     & .footer--azul
         background-color: #1f70c1
@@ -83,7 +93,7 @@
         text-align: center
         & h1
             color: white
-            font-family: 'Roboto Slab', serif
+            font-family: $card-hf-font, $card-hf-font-type
             text-transform: uppercase
     & .logo
         display: flex
@@ -98,6 +108,7 @@
             flex: 1
             padding-right: 15px
             text-align: right
+
     & .carta
         display: flex
         & .informacoes

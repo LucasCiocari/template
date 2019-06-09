@@ -1,36 +1,46 @@
+.botoes {
+  position: fixed;
+  right: 0;
+  top: 50%;
+}
+.botoes .btn {
+  border-radius: 0px;
+}
+.botoes .btn-add, .botoes .btn-print {
+  color: white;
+  display: block;
+  width: 100%;
+}
+.botoes .btn-add {
+  background-color: #f44242;
+}
+.botoes .btn-print {
+  background-color: #19d639;
+}
+
 .app .carta .div-do-select {
   display: grid;
 }
 .app .carta .div-do-select .text-styling {
   font-family: "Roboto", sans-serif;
+  display: table-caption;
+  text-align: center;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+.app .carta .div-do-select .text-styling::-ms-expand {
+  display: none;
 }
 .app .carta .div-do-select .select-image--azul {
-  display: table-caption;
-  text-align: center;
-  border: none;
   background-color: #1f70c1;
   color: white;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: "";
-}
-.app .carta .div-do-select .select-image--azul::-ms-expand {
-  display: none;
 }
 .app .carta .div-do-select .select-image--branco {
-  display: table-caption;
-  text-align: center;
-  border: none;
   background-color: #ffffff;
   color: #495057;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: "";
-}
-.app .carta .div-do-select .select-image--branco::-ms-expand {
-  display: none;
 }
 .app .carta .div-do-select .imagem-selecionada {
   padding: 12px 0px 0px 0px;
