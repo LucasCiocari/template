@@ -25,6 +25,7 @@ $card-hf-font-type: serif
             & .text-styling
                 font-family: 'Roboto', sans-serif
                 display: table-caption
+                cursor: pointer
                 text-align: center
                 border: none
                 -webkit-appearance: none
@@ -34,10 +35,10 @@ $card-hf-font-type: serif
                 &::-ms-expand 
                     display: none
             & .select-image--azul
-                background-color: #1f70c1
+                background-color: #7a838c
                 color: white      
             & .select-image--branco
-                background-color: #ffffff
+                background-color:  #efefef
                 color: #495057
             & .imagem-selecionada
                 padding: 12px 0px 0px 0px
@@ -56,7 +57,7 @@ $card-hf-font-type: serif
             font-size: 18px
     & .carta--azul
         & .form-control
-            background-color: #1f70c1
+            background-color: #7a838c
             border: none
             color: white
             padding: 0px
@@ -65,7 +66,7 @@ $card-hf-font-type: serif
                 color: white
     & .carta--branca
         & .form-control
-            background-color: white
+            background-color: #efefef
             border: none
             font-weight: 500
             
@@ -80,15 +81,15 @@ $card-hf-font-type: serif
             font-family: $card-hf-font, $card-hf-font-type
             text-transform: uppercase
     & .footer--azul
-        background-color: #1f70c1
+        background-image: linear-gradient(to right, #1f70c1, #28a745)
         & .font--azul
             color: #ffffff
     & .footer--branco
-        background-color: #ffffff        
+        background-image: linear-gradient(to right,  #1f70c1, #28a745)       
         & .font--branco
             color: #1f70c1
     & .cabecalho
-        background-color: #1f70c1
+        background-image: linear-gradient(to right, #28a745, #1f70c1)
         padding: 40px 0px 40px 0px
         text-align: center
         & h1
@@ -98,6 +99,7 @@ $card-hf-font-type: serif
     & .logo
         display: flex
         padding: 25px 0px 25px 0px
+        background-color: #F7F7F7
         & img
             height: 50px
         & .sicredi
@@ -136,15 +138,18 @@ $card-hf-font-type: serif
                 & .hideinput
                     display: none
                 & img
+                    opacity: 1
                     border-radius: 25%
                     position: relative
                     float: left
                     width:  200px
                     height: 200px
                     cursor: pointer
+                    &:hover 
+                        opacity: 0.6
+                        
     & .carta--azul
-        background-color: #1f70c1
-        color: white
+        background-color: #7a838c
     & .carta--branca
-        background-color: white
+        background-color: #efefef
         color: black
