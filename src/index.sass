@@ -9,7 +9,7 @@ $card-hf-font-type: serif
     top: 50%
     & .btn
         border-radius: 0px
-    & .btn-add, & .btn-print
+    & .btn-add, & .btn-print, & .btn-toggle
         color: white
         display: block
         width: 100%
@@ -17,6 +17,9 @@ $card-hf-font-type: serif
         background-color: #f44242
     & .btn-print
         background-color: #19d639
+    & .btn-toggle
+        background-color: #2c2c2c
+
 
 .app
     & .carta
@@ -27,6 +30,7 @@ $card-hf-font-type: serif
                 display: table-caption
                 cursor: pointer
                 text-align: center
+                cursor: pointer
                 border: none
                 -webkit-appearance: none
                 -moz-appearance: none
@@ -77,17 +81,10 @@ $card-hf-font-type: serif
     & .footer
         padding: 40px 0px 40px 0px
         text-align: center
-        & .font
-            font-family: $card-hf-font, $card-hf-font-type
-            text-transform: uppercase
-    & .footer--azul
+        font-family: $card-hf-font, $card-hf-font-type
+        text-transform: uppercase
         background-image: linear-gradient(to right, #1f70c1, #28a745)
-        & .font--azul
-            color: #ffffff
-    & .footer--branco
-        background-image: linear-gradient(to right,  #1f70c1, #28a745)       
-        & .font--branco
-            color: #1f70c1
+        color: #ffffff
     & .cabecalho
         background-image: linear-gradient(to right, #28a745, #1f70c1)
         padding: 40px 0px 40px 0px

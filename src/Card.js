@@ -75,6 +75,7 @@ class Card extends React.Component {
                               }
                           }
                           />
+
                           <img src={card.image} alt="Foto"/>
                       </label>
                   </div>

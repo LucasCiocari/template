@@ -1,6 +1,5 @@
 import React from "react";
 
-import Footer from "./Footer";
 import Card from "./Card";
 
 const CardList = ({cards, handleChange}) => (
@@ -12,8 +11,6 @@ const CardList = ({cards, handleChange}) => (
             )
         }
     </div>
-    <Footer length={cards.length}/>
-   
     </React.Fragment>
 )
 
