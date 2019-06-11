@@ -54,6 +54,9 @@ class Card extends React.Component {
                   <div className="time">
                       <input type="text" className="form-control form-control--azul" id="nomeSetor" placeholder="Nome do Time"/>
                   </div>
+                  <div className="atuacao">
+                      <input type="text"className="form-control form-control--azul" id="atuacao" placeholder="Área de Atuação"/>
+                  </div>
               </div>
               <div className="div-do-select">
                 <img className="imagem-selecionada" src={image} alt="sicredi"/>

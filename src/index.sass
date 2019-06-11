@@ -6,20 +6,42 @@ $card-hf-font-type: serif
 .botoes
     position: fixed
     right: 0
-    top: 50%
+    top: 35%
     & .btn
         border-radius: 0px
-    & .btn-add, & .btn-print, & .btn-toggle
+    & .btn-add, & .btn-print, & .btn-toggle, & .btn-remove
         color: white
         display: block
         width: 100%
     & .btn-add
+        background-color: #6486ad
+    & .btn-remove
         background-color: #f44242
     & .btn-print
         background-color: #19d639
     & .btn-toggle
         background-color: #2c2c2c
+    
 
+.app-bd
+    width: 100%
+    & .card-list-bd
+        background-color: yellow
+    & .card-bd
+        background-color: green
+        & .card-bd-img
+            border-radius: 50%
+            border: 1px solid gray
+            width: 100%
+            
+    & .footer-bd
+        padding-bottom: 15px
+        background-color: pink
+        text-align: right
+        height: 50px
+        & img
+            height: 100%
+            
 
 .app
     & .carta
