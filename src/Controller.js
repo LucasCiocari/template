@@ -29,8 +29,8 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
             <span>Trocar de template</span>
         </ReactTooltip>
 
-        <button className="card-list-button btn btn-add" data-tip data-for="adicionar" onClick={onAddCard}>{iconeAdicionar}</button> 
-        <button className="card-list-button btn btn-remove" data-tip data-for="remover" onClick={onRemoveCard}>{iconMinus}</button>
+        
+        
 
         <button className="save-photo btn btn-print" data-tip data-for="print" onClick={
                 () => {
@@ -55,6 +55,10 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
         <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={handleToggle}>
             {toggle ? iconBdCake : iconBuilding}
         </button>
+
+
+        <button className="card-list-button btn btn-add" data-tip data-for="adicionar" onClick={onAddCard}>{iconeAdicionar}</button> 
+        <button className="card-list-button btn btn-remove" data-tip data-for="remover" onClick={onRemoveCard}>{iconMinus}</button>
     </div>
 
 )

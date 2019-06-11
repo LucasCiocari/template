@@ -60,19 +60,18 @@ class App extends React.Component {
 
   handleRemoveCard = () => {
     this.setState(prevState => {
-      if(this.state.toggle){const newItems = prevState.items.slice();
+      if(this.state.toggle){
+      const newItems = prevState.items.slice();
       const index = newItems.length-1;
       console.log(index);
-      newItems.splice(index, 1)[0];
-
+      const ret = newItems.splice(index, 1)[0];  
       return {
         items: newItems
       };}
       else{
-        const newItems = prevState.birthdays.slice();
+      const newItems = prevState.birthdays.slice();
       const index = newItems.length-1;
-      console.log(index);
-      newItems.splice(index, 1)[0];
+      const ret = newItems.splice(index, 1)[0]
 
       return {
         birthdays: newItems
