@@ -19,7 +19,20 @@ const fontNames =
             {
                 font: 'Roboto Slab',
                 weights: [400]
+            },
+            {
+                font: 'Satisfy',
+                weights: [400]
+            },
+            {
+                font: 'Kalam',
+                weights: [400]
+            },
+            {
+                font: 'Merienda',
+                weights: [400]
             }
+
         ]
     }/>
 

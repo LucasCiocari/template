@@ -1,17 +1,12 @@
 import React from "react";
 
-const Header = () => (
-    <React.Fragment>
-        <div className="header-bd">
-            <span>
-                <input >
-                </input>
-            </span>
-            <span>
-                HAPPY BIRTHDAY
-            </span>
-        </div>
-    </React.Fragment>
-)
+const HeaderBirthday = () => (
+  
+    <div className="confetti-top">
+    <h1>PARABÉNS IBMISTAS!</h1>
+    <input type="text" className="input-date-bd" placeholder="Digite o mês" />
+    </div>
+  
+);
 
 export default HeaderBirthday;

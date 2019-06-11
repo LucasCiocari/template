@@ -35,7 +35,10 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
         <button className="save-photo btn btn-print" data-tip data-for="print" onClick={
                 () => {
                     window.scrollTo(0,0);  
-                    const element = document.querySelector("#aplicacao");
+                    var value = "";
+                    console.info(value);
+                    const element = document.querySelector("#application");
+                    console.info(element)
                     html2canvas(element, 
                         {
                             letterRendering: 1,

@@ -7,15 +7,16 @@ import Controller from "./Controller";
 import Footer from "./Footer";
 import FooterBirthday from "./FooterBirthday";
 import CardListBirthday from "./CardListBirthday";
+import HeaderBirthday from "./HeaderBirthday";
 
 import generic from "./images/ico.png";
 import noimage from "./images/no-image.png";
 
 class App extends React.Component {
   state = {
-    items: [{ id: uuid(), image: generic }],
-    birthdays: [{ id: uuid(), image: noimage }],
-    toggle: true
+    items: [{ id: 0, image: generic }],
+    birthdays: [{ id: 1, image: generic }],
+    toggle: false
   };
 
   handleChange = (id, file) => {
@@ -52,7 +53,7 @@ class App extends React.Component {
         };
       } else {
         return {
-          birthdays: prevState.birthdays.concat({ id: uuid(), image: noimage })
+          birthdays: prevState.birthdays.concat({ id: uuid(), image: generic })
         };
       }
     });
@@ -93,9 +94,11 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {this.state.toggle ? (
-          <React.Fragment>
-            <div className="container" id="aplicacao">
+        <div id="application">
+        {
+        this.state.toggle ? 
+        (
+            <div className="container">
               <div className="app">
                 <Header />
                 <CardList
@@ -105,18 +108,23 @@ class App extends React.Component {
                 <Footer />
               </div>
             </div>
-          </React.Fragment>
         ) : (
             <div className="container">
               <div className="app-bd">
+                <div className="app-bd-balloon">
+                <div className="app-bd-confetti">
+                <HeaderBirthday />
                 <CardListBirthday
                   cards={this.state.birthdays}
                   handleChange={this.handleChange}
                 />
                 <FooterBirthday />
+                </div>
+                </div>
               </div>
             </div>
           )}
+          </div>
 
         <div className="container">
           <Controller

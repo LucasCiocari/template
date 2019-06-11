@@ -98,4 +98,4 @@ typings/
 dist/*
 index.scss.map
 build
-build/*/*
+

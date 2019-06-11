@@ -5,9 +5,9 @@ import CardBirthday from "./CardBirthday";
 const CardListBirthday = ({ cards, handleChange }) => (
   <React.Fragment>
     <div className="card-list-bd">
-      <div className="row">
+      <div className="row justify-content-center">
         {cards.map((card, index) => (
-          <div className="col-2">
+          <div className="col-2" key={card.id+1}>
             <CardBirthday
               key={card.id}
               index={index}
