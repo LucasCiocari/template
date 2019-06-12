@@ -1,7 +1,21 @@
 import React from "react";
 import Textarea from 'react-textarea-autosize';
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 class CardBirthday extends React.Component {
+
+  state = {
+    startDate : ''
+  }
+
+  handleChangeDate = (date) => {
+    this.setState({
+      startDate: date
+    });
+  }
+
   render() {
     const { index, card, handleChange } = this.props;
     return (
@@ -20,7 +34,14 @@ class CardBirthday extends React.Component {
         </label>
         <Textarea minRows={1} maxRows={2} placeholder="Nome" maxLength={30} className="card-bd-name-input" />
         <div className="margin-bd-date">
-          <input type="date" className="card-bd-date-input"/>
+          {/* <input type="date" className="card-bd-date-input"/> */}
+          <DatePicker 
+            selected={this.state.startDate}
+            onChange={this.handleChangeDate}
+            dateFormat="d/MM  "
+            className="card-bd-date-input"
+            placeholderText="Escolha a data"
+          />
         </div>
         <Textarea minRows={1} maxRows={2} placeholder="Localização"  maxLength={30} className="card-bd-place-input" />
       </div>

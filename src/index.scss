@@ -81,6 +81,8 @@
   font-family: "Roboto Mono", monospace;
   font-weight: 500;
   text-shadow: 0px 1px #e8e8e8;
+  text-align: center;
+  width: 100%;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-name-input, .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-place-input {
   background: none;
@@ -100,7 +102,7 @@
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-img {
   border-radius: 50%;
   border: 1px solid gray;
-  width: 100%;
+  width: 150px;
   height: 150px;
   cursor: pointer;
 }

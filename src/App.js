@@ -16,6 +16,7 @@ class App extends React.Component {
     items: [{ id: 0, image: generic }],
     birthdays: [{ id: 1, image: generic }],
     toggle: false
+
   };
 
   handleChange = (id, file) => {

@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faCamera, faBirthdayCake, faBuilding, faMinus, faUserInjured} from '@fortawesome/free-solid-svg-icons';
 
-
 const iconeAdicionar = <FontAwesomeIcon icon={faPlus} size='2x' />
 const iconePrint = <FontAwesomeIcon icon={faCamera} size='2x'/>
 const iconBdCake = <FontAwesomeIcon icon={faBirthdayCake} size='2x' />
