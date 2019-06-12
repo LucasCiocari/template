@@ -37,7 +37,10 @@
   background-image: url("./images/confettipng.png");
   background-repeat: repeat;
 }
-.app-bd .app-bd-balloon .app-bd-confetti h1 {
+.app-bd .app-bd-balloon .app-bd-confetti .confetti-top {
+  text-align: center;
+}
+.app-bd .app-bd-balloon .app-bd-confetti .confetti-top h1 {
   margin-top: 10px;
   font-family: "Merienda", cursive;
   text-align: center;
@@ -45,9 +48,19 @@
   color: #2e4263;
   text-shadow: 2px 4px #e8e8e8;
 }
-.app-bd .app-bd-balloon .app-bd-confetti .input-date-bd {
+.app-bd .app-bd-balloon .app-bd-confetti .confetti-top .input-date-bd {
   background: none;
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
   border: none;
+  color: #2e4263;
+  text-shadow: 2px 2px #e8e8e8;
+  font-weight: 600;
+}
+.app-bd .app-bd-balloon .app-bd-confetti .confetti-top .input-date-bd::placeholder {
+  opacity: 0.9;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-list-bd {
   margin: 20px;
@@ -57,17 +70,29 @@
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd {
   margin-top: 15px;
 }
-.app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-date-input {
+.app-bd .app-bd-balloon .app-bd-confetti .card-bd .margin-bd-date {
+  margin-left: 15px;
+}
+.app-bd .app-bd-balloon .app-bd-confetti .card-bd .margin-bd-date .card-bd-date-input {
   background: none;
   cursor: pointer;
   border: none;
   align-content: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  text-shadow: 0px 1px #e8e8e8;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-name-input, .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-place-input {
   background: none;
   border: none;
   width: 100%;
   text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500;
+  text-shadow: 0px 1px #e8e8e8;
+  resize: none;
+  overflow: auto;
+  height: 24px;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .hideinput {
   display: none;
@@ -119,7 +144,7 @@
   color: #495057;
 }
 .app .carta .div-do-select .imagem-selecionada {
-  padding: 12px 0px 0px 0px;
+  margin: 10% 0px 0px 0px;
   border-radius: 25%;
   position: relative;
   float: left;
@@ -217,6 +242,7 @@
 .app .carta .foto {
   flex: 1;
   text-align: center;
+  margin-top: 10px;
 }
 .app .carta .foto .perfil {
   padding: 10px 15px 10px 15px;

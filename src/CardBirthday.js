@@ -1,4 +1,5 @@
 import React from "react";
+import Textarea from 'react-textarea-autosize';
 
 class CardBirthday extends React.Component {
   render() {
@@ -17,9 +18,11 @@ class CardBirthday extends React.Component {
           />
           <img className="card-bd-img" src={card.image} alt="person image" />
         </label>
-        <input type="text" className="card-bd-name-input" placeholder="Nome"/>
-        <input type="date" className="card-bd-date-input"/>
-        <input type="text" className="card-bd-place-input" placeholder="Localização"/>
+        <Textarea minRows={1} maxRows={2} placeholder="Nome" maxLength={30} className="card-bd-name-input" />
+        <div className="margin-bd-date">
+          <input type="date" className="card-bd-date-input"/>
+        </div>
+        <Textarea minRows={1} maxRows={2} placeholder="Localização"  maxLength={30} className="card-bd-place-input" />
       </div>
     );
   }

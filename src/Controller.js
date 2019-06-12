@@ -3,7 +3,7 @@ import html2canvas from "html2canvas";
 import saveAs from "file-saver";
 import ReactTooltip from 'react-tooltip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faCamera, faBirthdayCake, faBuilding, faMinus} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCamera, faBirthdayCake, faBuilding, faMinus, faUserInjured} from '@fortawesome/free-solid-svg-icons';
 
 
 const iconeAdicionar = <FontAwesomeIcon icon={faPlus} size='2x' />
@@ -48,7 +48,7 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
                     canvas => { 
                         
                         canvas.toBlob(function(blob) {
-                            saveAs(blob, "pretty image.png");
+                            saveAs(blob, "template.png");
                         });
                     }
                 );

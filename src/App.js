@@ -10,7 +10,6 @@ import CardListBirthday from "./CardListBirthday";
 import HeaderBirthday from "./HeaderBirthday";
 
 import generic from "./images/ico.png";
-import noimage from "./images/no-image.png";
 
 class App extends React.Component {
   state = {
@@ -61,26 +60,24 @@ class App extends React.Component {
 
   handleRemoveCard = () => {
     this.setState(prevState => {
-      if(this.state.toggle){
-      const newItems = prevState.items.slice();
-      const index = newItems.length-1;
-      console.log(index);
-      const ret = newItems.splice(index, 1)[0];  
-      return {
-        items: newItems
-      };}
-      else{
-      const newItems = prevState.birthdays.slice();
-      const index = newItems.length-1;
-      const ret = newItems.splice(index, 1)[0]
+      if (this.state.toggle) {
+        const newItems = prevState.items.slice();
+        const index = newItems.length - 1;
+        console.log(index);
+        const ret = newItems.splice(index, 1)[0];
+        return {
+          items: newItems
+        };
+      } else {
+        const newItems = prevState.birthdays.slice();
+        const index = newItems.length - 1;
+        const ret = newItems.splice(index, 1)[0];
 
-      return {
-        birthdays: newItems
-      };
-
+        return {
+          birthdays: newItems
+        };
       }
-    }
-    );
+    });
   };
 
   handleToggle = () => {
@@ -94,11 +91,9 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id="application">
-        {
-        this.state.toggle ? 
-        (
-            <div className="container">
+        <div className="container">
+          <div id="application">
+            {this.state.toggle ? (
               <div className="app">
                 <Header />
                 <CardList
@@ -107,24 +102,22 @@ class App extends React.Component {
                 />
                 <Footer />
               </div>
-            </div>
-        ) : (
-            <div className="container">
+            ) : (
               <div className="app-bd">
                 <div className="app-bd-balloon">
-                <div className="app-bd-confetti">
-                <HeaderBirthday />
-                <CardListBirthday
-                  cards={this.state.birthdays}
-                  handleChange={this.handleChange}
-                />
-                <FooterBirthday />
-                </div>
+                  <div className="app-bd-confetti">
+                    <HeaderBirthday />
+                    <CardListBirthday
+                      cards={this.state.birthdays}
+                      handleChange={this.handleChange}
+                    />
+                    <FooterBirthday />
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
           </div>
+        </div>
 
         <div className="container">
           <Controller
