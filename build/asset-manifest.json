@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.fa92c4f9.chunk.css",
-    "main.js": "/static/js/main.516759e3.chunk.js",
+    "main.css": "/static/css/main.28893a67.chunk.css",
+    "main.js": "/static/js/main.2145dc72.chunk.js",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "static/js/2.62d32a80.chunk.js": "/static/js/2.62d32a80.chunk.js",
+    "static/js/2.30124bd7.chunk.js": "/static/js/2.30124bd7.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.e0843efb7272b250ca921225747bb27e.js": "/precache-manifest.e0843efb7272b250ca921225747bb27e.js",
+    "precache-manifest.bc590bf6ea95b0a319e6edcfe55c9dd3.js": "/precache-manifest.bc590bf6ea95b0a319e6edcfe55c9dd3.js",
     "service-worker.js": "/service-worker.js",
     "static/media/IBM.png": "/static/media/IBM.6a14ac9e.png",
     "static/media/IBM.jpg": "/static/media/IBM.fdd15cc0.jpg",
     "static/media/assis.jpg": "/static/media/assis.bc4212a5.jpg",
+    "static/media/index.scss": "/static/media/balao.dca9ee05.png",
     "static/media/digital.jpg": "/static/media/digital.df454abc.jpg",
     "static/media/ibm-birthday.png": "/static/media/ibm-birthday.d7595f56.png",
     "static/media/sicredi.png": "/static/media/sicredi.225aa6dd.png"

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./public/index.html",
-    "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build && bx target --cf && bx app push teste-ibmtemplates"
+    "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build && bx target --cf && bx app push ibmtemplates"
   },
   "author": "Andrei Cruz, Lucas Ciocari, Thiago Miranda",
   "license": "MIT",
