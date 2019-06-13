@@ -10,13 +10,85 @@ import CardListBirthday from "./CardListBirthday";
 import HeaderBirthday from "./HeaderBirthday";
 
 import generic from "./images/ico.png";
+import assis from "./images/assis.jpg";
+import digital from "./images/digital.jpg";
+import ibmp from "./images/IBM.jpg";
+import downtownibm from "./images/no-image.png";
 
 class App extends React.Component {
   state = {
-    items: [{ id: 0, image: generic }],
-    birthdays: [{ id: 1, image: generic }],
-    toggle: true
+    items: [
+      {
+        id: 0,
+        image: generic,
+        name: "",
+        godparent: "",
+        leader: "",
+        team: "",
+        area: "",
+        map: "assis",
+        imageMap: assis
+      }
+    ],
+    birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
+    toggle: true,
+    bdMonthText: ""
+  };
 
+  handleNameChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].name = text;
+
+      return { items: newItems };
+    });
+  };
+  handleGodparentChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].godparent = text;
+
+      return { items: newItems };
+    });
+  };
+  handleLeaderChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].leader = text;
+
+      return { items: newItems };
+    });
+  };
+  handleTeamChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].team = text;
+
+      return { items: newItems };
+    });
+  };
+  handleAreaChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].area = text;
+
+      return { items: newItems };
+    });
+  };
+
+  handleDateBdChange = (date, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.birthdays;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].date = date;
+
+      return { birthdays: newItems };
+    });
   };
 
   handleChange = (id, file) => {
@@ -49,11 +121,27 @@ class App extends React.Component {
     this.setState(prevState => {
       if (this.state.toggle) {
         return {
-          items: prevState.items.concat({ id: uuid(), image: generic })
+          items: prevState.items.concat({
+            id: uuid(),
+            image: generic,
+            name: "",
+            godparent: "",
+            leader: "",
+            team: "",
+            area: "",
+            map: "assis",
+            imageMap: assis
+          })
         };
       } else {
         return {
-          birthdays: prevState.birthdays.concat({ id: uuid(), image: generic })
+          birthdays: prevState.birthdays.concat({
+            id: uuid(),
+            image: generic,
+            name: "",
+            date: "",
+            place: ""
+          })
         };
       }
     });
@@ -89,7 +177,62 @@ class App extends React.Component {
     });
   };
 
+  handleBdMonthChange = text => {
+    this.setState({
+      bdMonthText: text
+    });
+  };
+
+  handleNameBdChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.birthdays;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].name = text;
+
+      return { birthdays: newItems };
+    });
+  };
+
+  handlePlaceBdChange = (text, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.birthdays;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].place = text;
+
+      return { birthdays: newItems };
+    });
+  };
+
+  handleChangeMap = (value, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      newItems[index].map = value;
+
+      if (value == "assis") {
+        newItems[index].imageMap = assis;
+      }
+
+      if (value == "digital") {
+        newItems[index].imageMap = digital;
+      }
+
+      if (value == "ibmp") {
+        newItems[index].imageMap = ibmp;
+      }
+
+      if (value == "downtownibm") {
+        newItems[index].imageMap = downtownibm;
+      }
+      return {
+        items: newItems
+      };
+    });
+  };
+
   render() {
+    const { bdMonthText } = this.state;
+
     return (
       <React.Fragment>
         <div className="container">
@@ -100,6 +243,12 @@ class App extends React.Component {
                 <CardList
                   cards={this.state.items}
                   handleChange={this.handleChange}
+                  handleNameChange={this.handleNameChange}
+                  handleGodparentChange={this.handleGodparentChange}
+                  handleLeaderChange={this.handleLeaderChange}
+                  handleTeamChange={this.handleTeamChange}
+                  handleAreaChange={this.handleAreaChange}
+                  handleChangeMap={this.handleChangeMap}
                 />
                 <Footer />
               </div>
@@ -107,10 +256,16 @@ class App extends React.Component {
               <div className="app-bd">
                 <div className="app-bd-balloon">
                   <div className="app-bd-confetti">
-                    <HeaderBirthday />
+                    <HeaderBirthday
+                      bdMonthText={bdMonthText}
+                      handleBdMonthChange={this.handleBdMonthChange}
+                    />
                     <CardListBirthday
                       cards={this.state.birthdays}
                       handleChange={this.handleChange}
+                      handleNameBdChange={this.handleNameBdChange}
+                      handlePlaceBdChange={this.handlePlaceBdChange}
+                      handleDateBdChange={this.handleDateBdChange}
                     />
                     <FooterBirthday />
                   </div>

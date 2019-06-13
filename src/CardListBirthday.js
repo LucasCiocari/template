@@ -2,7 +2,7 @@ import React from "react";
 
 import CardBirthday from "./CardBirthday";
 
-const CardListBirthday = ({ cards, handleChange }) => (
+const CardListBirthday = ({ cards, handleChange, handleNameBdChange, handlePlaceBdChange, handleDateBdChange }) => (
   <React.Fragment>
     <div className="card-list-bd">
       <div className="row justify-content-center">
@@ -13,6 +13,9 @@ const CardListBirthday = ({ cards, handleChange }) => (
               index={index}
               card={card}
               handleChange={handleChange}
+              handleNameBdChange={handleNameBdChange}
+              handlePlaceBdChange={handlePlaceBdChange}
+              handleDateBdChange={handleDateBdChange}
             />
           </div>
         ))}

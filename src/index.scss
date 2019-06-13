@@ -25,7 +25,7 @@
 }
 
 .app-bd {
-  background-image: linear-gradient(to right, #3ee8b7, #54ff99);
+  background-image: linear-gradient(to right, #c4daff, #e8edf4);
   width: 100%;
   border: 1px gray solid;
 }
@@ -139,7 +139,7 @@
   display: none;
 }
 .app .carta .div-do-select .select-image--azul {
-  background-color: #7a838c;
+  background-color: #a1aab3;
   color: white;
 }
 .app .carta .div-do-select .select-image--branco {
@@ -165,7 +165,7 @@
   font-size: 18px;
 }
 .app .carta--azul .form-control {
-  background-color: #7a838c;
+  background-color: #a1aab3;
   border: none;
   color: white;
   padding: 0px;
@@ -257,7 +257,7 @@
 .app .carta .foto .perfil .hideinput {
   display: none;
 }
-.app .carta .foto .perfil img {
+.app .carta .foto .perfil .avatar-editor {
   opacity: 1;
   border-radius: 25%;
   position: relative;
@@ -266,11 +266,11 @@
   height: 200px;
   cursor: pointer;
 }
-.app .carta .foto .perfil img:hover {
+.app .carta .foto .perfil .avatar-editor:hover {
   opacity: 0.6;
 }
 .app .carta--azul {
-  background-color: #7a838c;
+  background-color: #a1aab3;
 }
 .app .carta--branca {
   background-color: #efefef;

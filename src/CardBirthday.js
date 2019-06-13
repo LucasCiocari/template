@@ -6,18 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class CardBirthday extends React.Component {
 
-  state = {
-    startDate : ''
-  }
-
-  handleChangeDate = (date) => {
-    this.setState({
-      startDate: date
-    });
-  }
-
   render() {
-    const { index, card, handleChange } = this.props;
+    const { index, card, handleChange, handleNameBdChange, handlePlaceBdChange, handleDateBdChange } = this.props;
     return (
       <div className="card-bd">
         <label>
@@ -32,18 +22,30 @@ class CardBirthday extends React.Component {
           />
           <img className="card-bd-img" src={card.image} alt="person image" />
         </label>
-        <Textarea minRows={1} maxRows={2} placeholder="Nome" maxLength={30} className="card-bd-name-input" />
+        <Textarea minRows={1} maxRows={2} placeholder="Nome" 
+          value={card.name}
+          onChange={
+          event => {
+            handleNameBdChange(event.target.value, card.id);
+          }
+        } maxLength={30} className="card-bd-name-input" />
         <div className="margin-bd-date">
           {/* <input type="date" className="card-bd-date-input"/> */}
           <DatePicker 
-            selected={this.state.startDate}
-            onChange={this.handleChangeDate}
+            selected={card.date}
+            onChange={date => {
+              handleDateBdChange(date, card.id)
+            }}
             dateFormat="d/MM  "
             className="card-bd-date-input"
             placeholderText="Escolha a data"
           />
         </div>
-        <Textarea minRows={1} maxRows={2} placeholder="Localização"  maxLength={30} className="card-bd-place-input" />
+        <Textarea minRows={1} maxRows={2} value={card.place} onChange={
+          event => {
+            handlePlaceBdChange(event.target.value, card.id);
+          }}
+          placeholder="Localização"  maxLength={30} className="card-bd-place-input" />
       </div>
     );
   }
