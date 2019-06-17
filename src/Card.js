@@ -228,7 +228,7 @@ class Card extends React.Component {
               handleChangeMap(event.target.value, card.id);
             }}
           >
-            <option value="selecione" className="value-default">Selecione o local</option>
+            <option value="selecione" className="value-default">SELECIONE LOCAL</option>
             <option value="assis">CAS - Assis Brasil</option>
             <option value="digital">PUC - Sicredi Digital</option>
             <option value="ibmp">IBM Filial</option>

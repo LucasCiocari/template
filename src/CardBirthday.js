@@ -1,10 +1,21 @@
 import React from "react";
 import Textarea from 'react-textarea-autosize';
 import DatePicker from "react-datepicker";
+import ReactHoverObserver from "react-hover-observer";
 
 import "react-datepicker/dist/react-datepicker.css";
 
 class CardBirthday extends React.Component {
+
+  state = { 
+    nameIsHovering: false
+  }
+
+  onHoverNameChanged = ({ isHovering }) => {
+    this.setState({
+      nameIsHovering: isHovering
+    });
+  };
 
   render() {
     const { index, card, handleChange, handleNameBdChange, handlePlaceBdChange, handleDateBdChange } = this.props;
@@ -22,6 +33,11 @@ class CardBirthday extends React.Component {
           />
           <img className="card-bd-img" src={card.image} alt="person image" />
         </label>
+        <ReactHoverObserver
+              {...{
+                onHoverChanged: this.onHoverNameChanged
+              }}
+            >
         <Textarea minRows={1} maxRows={2} placeholder="Nome" 
           value={card.name}
           onChange={
@@ -29,6 +45,7 @@ class CardBirthday extends React.Component {
             handleNameBdChange(event.target.value, card.id);
           }
         } maxLength={30} className="card-bd-name-input" />
+        </ReactHoverObserver>
         <div className="margin-bd-date">
           {/* <input type="date" className="card-bd-date-input"/> */}
           <DatePicker 
