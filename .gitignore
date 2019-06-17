@@ -97,6 +97,7 @@ typings/
 # End of https://www.gitignore.io/api/node,sass
 dist/*
 index.scss.map
-build
+build/*
 
 src/index.scss
+build/asset-manifest.json

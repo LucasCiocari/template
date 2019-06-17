@@ -113,6 +113,12 @@ $card-light-color: #efefef
         & .div-do-select
             display: grid
             text-align-last: center
+            margin-right: -50px
+            padding-left: 100px
+            & .selected-place
+                text-align: center
+                margin-top: 15px
+                height: 35px
             & .text-styling
                 font-family: 'Roboto', sans-serif
                 display: table-caption
@@ -137,8 +143,8 @@ $card-light-color: #efefef
                 border-radius: 25%
                 position: relative
                 float: left
-                width:  200px
-                height: 200px
+                width:  150px
+                height: 150px
             
         & #nomeFuncionario, & #nomePadrinho
             margin-bottom: 3px
@@ -156,11 +162,15 @@ $card-light-color: #efefef
             font-weight: 500
             &::placeholder
                 color: white
+        & .form-control-hover
+            border: 2px solid white
     & .carta--branca
         & .form-control
             background-color: $card-light-color
             border: none
             font-weight: 500
+        & .form-control-hover
+            border: 2px solid gray
             
 .app
     margin: auto
@@ -171,10 +181,10 @@ $card-light-color: #efefef
         text-align: center
         font-family: $card-hf-font, $card-hf-font-type
         text-transform: uppercase
-        background-image: linear-gradient(to right, #1f70c1, #28a745)
+        background-image: linear-gradient(to right, #1f70c1, #a1beed)
         color: #ffffff
     & .cabecalho
-        background-image: linear-gradient(to right, #28a745, #1f70c1)
+        background-image: linear-gradient(to right, #a1beed, #1f70c1)
         padding: 40px 0px 40px 0px
         text-align: center
         & h1
@@ -187,14 +197,10 @@ $card-light-color: #efefef
         background-color: #F7F7F7
         & img
             height: 50px
-        & .sicredi
-            flex: 1
-            padding-left: 15px
-            text-align: left
         & .ibm
             flex: 1
             padding-right: 15px
-            text-align: right
+            text-align: center
 
     & .carta
         display: flex
@@ -211,29 +217,26 @@ $card-light-color: #efefef
                 font-size: 18px
             & .scrum
                 margin-top: 20px
-        & .foto
-            flex: 1
+        & .perfil
             text-align: center
-            margin-top: 10px
-            & .perfil
-                padding: 10px 15px 10px 15px
-                text-align: center
-                width: 50%
-                display: inline-block
-                margin-right: 15px   
-                & .hideinput
-                    display: none
-                & .avatar-editor
-                    opacity: 1
-                    border-radius: 25%
-                    position: relative
-                    float: left
-                    width:  200px
-                    height: 200px
-                    cursor: pointer
-                    &:hover 
-                        opacity: 0.6
-                        
+            margin-top: 25px
+            margin-left: 30px
+            margin-right: -30px
+            display: inline-block
+            flex: 1
+            & .hideinput
+                display: none
+            & .avatar-editor
+                opacity: 1
+                border-radius: 25%
+                position: relative
+                float: left
+                width:  200px
+                height: 200px
+                cursor: pointer
+                &:hover 
+                    opacity: 0.6
+                    
     & .carta--azul
         background-color: $card-strong-color
     & .carta--branca
