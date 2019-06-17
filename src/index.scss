@@ -127,8 +127,10 @@
 }
 .app .carta .div-do-select .selected-place {
   text-align: center;
+  max-height: 35px;
+  max-width: 150px;
   margin-top: 15px;
-  height: 35px;
+  margin-bottom: -10px;
 }
 .app .carta .div-do-select .text-styling {
   font-family: "Roboto", sans-serif;

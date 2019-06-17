@@ -177,7 +177,7 @@ class Card extends React.Component {
         </div>
 
         <div className="div-do-select">
-          <img className="selected-place" src={sicrediLogo}/>
+          <img className="selected-place" src={card.logoImage}/>
           <img
             className="imagem-selecionada"
             src={card.imageMap}
@@ -198,6 +198,8 @@ class Card extends React.Component {
             <option value="digital">PUC - Sicredi Digital</option>
             <option value="ibmp">IBM Filial</option>
             <option value="downtownibm">CAS - Alberto Bins</option>
+            <option value="agibankplace">Agibank</option>
+            <option value="banrisulplace">Banrisul</option>
           </select>
         </div>
           <div className="perfil">

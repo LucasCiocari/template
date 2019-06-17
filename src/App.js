@@ -14,6 +14,12 @@ import assis from "./images/assis.jpg";
 import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
 import downtownibm from "./images/no-image.png";
+import agibankplace from "./images/no-image.png";
+import banrisulplace from "./images/no-image.png"; 
+
+import sicrediLogo from "./images/sicredi.png";
+import agibankLogo from "./images/agibank.png";
+import banrisulLogo from "./images/banrisul.png";
 
 class App extends React.Component {
   state = {
@@ -27,7 +33,8 @@ class App extends React.Component {
         team: "",
         area: "",
         map: "assis",
-        imageMap: assis
+        imageMap: assis,
+        logoImage: sicrediLogo
       }
     ],
     birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
@@ -211,19 +218,34 @@ class App extends React.Component {
 
       if (value == "assis") {
         newItems[index].imageMap = assis;
+        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "digital") {
         newItems[index].imageMap = digital;
+        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "ibmp") {
         newItems[index].imageMap = ibmp;
+        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "downtownibm") {
         newItems[index].imageMap = downtownibm;
+        newItems[index].logoImage = sicrediLogo;
       }
+
+      if (value == "agibankplace") {
+        newItems[index].imageMap = agibankplace;
+        newItems[index].logoImage = agibankLogo;
+      }
+
+      if (value == "banrisulplace") {
+        newItems[index].imageMap = banrisulplace;
+        newItems[index].logoImage = banrisulLogo;
+      }
+
       return {
         items: newItems
       };
