@@ -54,10 +54,17 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
             }
         }>{iconePrint}
         </button>
-        <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={handleToggle}>
-            {toggle ? iconBdCake : iconBuilding}
+        <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={
+            () => handleToggle(1)
+            }>
+            {iconBuilding}
         </button>
 
+        <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={() => handleToggle(2)}>
+            {iconBdCake}
+        </button>
+        
+        
 
         <button className="card-list-button btn btn-add" data-tip data-for="adicionar" onClick={onAddCard}>{iconeAdicionar}</button> 
         <button className="card-list-button btn btn-remove" data-tip data-for="remover" onClick={onRemoveCard}>{iconMinus}</button>

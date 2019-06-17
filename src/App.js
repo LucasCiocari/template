@@ -1,13 +1,9 @@
 import React from "react";
 import uuid from "uuid/v1"; // gera hash a partir do timestamp
 
-import Header from "./Header";
-import CardList from "./CardList";
+import ChooseTemplate from "./ChooseTemplate";
 import Controller from "./Controller";
-import Footer from "./Footer";
-import FooterBirthday from "./FooterBirthday";
-import CardListBirthday from "./CardListBirthday";
-import HeaderBirthday from "./HeaderBirthday";
+
 
 import generic from "./images/ico.png";
 import assis from "./images/assis.jpg";
@@ -42,7 +38,7 @@ class App extends React.Component {
       }
     ],
     birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
-    toggle: false,
+    toggle: 1,
     bdMonthText: ""
   };
 
@@ -181,11 +177,9 @@ class App extends React.Component {
     });
   };
 
-  handleToggle = () => {
-    this.setState(prevState => {
-      return {
-        toggle: !prevState.toggle
-      };
+  handleToggle = id => {
+    this.setState({
+      toggle: id
     });
   };
 
@@ -258,47 +252,29 @@ class App extends React.Component {
   };
 
   render() {
-    const { bdMonthText } = this.state;
+    const { bdMonthText, toggle, items, birthdays } = this.state;
 
     return (
       <React.Fragment>
         <div className="container">
           <div id="application">
-            {this.state.toggle ? (
-              <div className="app">
-                <Header />
-                <CardList
-                  cards={this.state.items}
-                  handleChange={this.handleChange}
-                  handleNameChange={this.handleNameChange}
-                  handleGodparentChange={this.handleGodparentChange}
-                  handleLeaderChange={this.handleLeaderChange}
-                  handleTeamChange={this.handleTeamChange}
-                  handleAreaChange={this.handleAreaChange}
-                  handleChangeMap={this.handleChangeMap}
-                />
-                <Footer />
-              </div>
-            ) : (
-              <div className="app-bd">
-                <div className="app-bd-balloon">
-                  <div className="app-bd-confetti">
-                    <HeaderBirthday
-                      bdMonthText={bdMonthText}
-                      handleBdMonthChange={this.handleBdMonthChange}
-                    />
-                    <CardListBirthday
-                      cards={this.state.birthdays}
-                      handleChange={this.handleChange}
-                      handleNameBdChange={this.handleNameBdChange}
-                      handlePlaceBdChange={this.handlePlaceBdChange}
-                      handleDateBdChange={this.handleDateBdChange}
-                    />
-                    <FooterBirthday />
-                  </div>
-                </div>
-              </div>
-            )}
+            <ChooseTemplate 
+              id={toggle} 
+              cards={items}
+              handleChange={this.handleChange}
+              handleNameChange={this.handleNameChange}
+              handleGodparentChange={this.handleGodparentChange}
+              handleLeaderChange={this.handleLeaderChange}
+              handleTeamChange={this.handleTeamChange}
+              handleAreaChange={this.handleAreaChange}
+              handleChangeMap={this.handleChangeMap}
+              cardsBd={birthdays}
+              handleNameBdChange={this.handleNameBdChange}
+              handlePlaceBdChange={this.handlePlaceBdChange}
+              handleDateBdChange={this.handleDateBdChange}
+              bdMonthText={bdMonthText}
+              handleBdMonthChange={this.handleBdMonthChange}
+            />
           </div>
         </div>
 
@@ -314,5 +290,6 @@ class App extends React.Component {
     );
   }
 }
+
 
 export default App;
