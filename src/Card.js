@@ -3,11 +3,6 @@ import classNames from "classnames";
 import AvatarEditor from "react-avatar-editor";
 import ReactHoverObserver from "react-hover-observer";
 
-
-import sicrediLogo from "./images/sicredi.png";
-import agibankLogo from "./images/agibank.png";
-import banrisulLogo from "./images/banrisul.png";
-
 class Card extends React.Component {
   state = {
     enableInput: true,
@@ -43,6 +38,11 @@ class Card extends React.Component {
       roleIsHovering: isHovering
     });
   };
+  onHoverSelectChanged = ({ isHovering }) => {
+    this.setState({
+      SelectIsHovering: isHovering
+    });
+  };
 
   render() {
     const {
@@ -62,7 +62,8 @@ class Card extends React.Component {
       godparentIsHovering,
       leaderIsHovering,
       teamIsHovering,
-      roleIsHovering
+      roleIsHovering,
+      SelectIsHovering
     } = this.state;
 
     return (
@@ -176,7 +177,37 @@ class Card extends React.Component {
           </div>
         </div>
 
-        <div className="div-do-select">
+        
+          <div className="perfil">
+            <label>
+              {this.state.enableInput ? (
+                <input
+                  className="hideinput"
+                  type="file"
+                  name="image"
+                  id="image"
+                  onChange={event => {
+                    this.setState({
+                      enableInput: false
+                    });
+                    handleChange(card.id, event.target.files[0]);
+                  }}
+                />
+              ) : (
+                <React.Fragment />
+              )}
+              {/* <img src={card.image} alt="Foto"/> */}
+              <AvatarEditor
+                image={card.image}
+                width={200}
+                height={200}
+                border={0}
+                borderRadius={20}
+                className="avatar-editor"
+              />
+            </label>
+          </div>
+          <div className="div-do-select">
           <img className="selected-place" src={card.logoImage}/>
           <img
             className="imagem-selecionada"
@@ -202,36 +233,6 @@ class Card extends React.Component {
             <option value="banrisulplace">Banrisul</option>
           </select>
         </div>
-          <div className="perfil">
-            <label>
-              {this.state.enableInput ? (
-                <input
-                  className="hideinput"
-                  type="file"
-                  name="image"
-                  id="image"
-                  onChange={event => {
-                    this.setState({
-                      enableInput: false
-                    });
-                    handleChange(card.id, event.target.files[0]);
-                  }}
-                />
-              ) : (
-                <React.Fragment />
-              )}
-
-              {/* <img src={card.image} alt="Foto"/> */}
-              <AvatarEditor
-                image={card.image}
-                width={200}
-                height={200}
-                border={0}
-                borderRadius={20}
-                className="avatar-editor"
-              />
-            </label>
-          </div>
         </div>
     );
   }
