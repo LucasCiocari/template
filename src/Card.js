@@ -5,6 +5,8 @@ import ReactHoverObserver from "react-hover-observer";
 
 
 import sicrediLogo from "./images/sicredi.png";
+import agibankLogo from "./images/agibank.png";
+import banrisulLogo from "./images/banrisul.png";
 
 class Card extends React.Component {
   state = {
