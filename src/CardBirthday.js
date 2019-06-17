@@ -2,6 +2,7 @@ import React from "react";
 import Textarea from "react-textarea-autosize";
 import DatePicker from "react-datepicker";
 import ReactHoverObserver from "react-hover-observer";
+import AvatarEditor from "react-avatar-editor";
 import classNames from "classnames";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -46,7 +47,15 @@ class CardBirthday extends React.Component {
               handleChange(card.id, event.target.files[0]);
             }}
           />
-          <img className="card-bd-img" src={card.image} alt="person image" />
+          {/* <img className="card-bd-img" src={card.image} alt="person image" /> */}
+          <AvatarEditor
+                image={card.image}
+                width={150}
+                height={150}
+                border={0}
+                borderRadius={20}
+                className="card-bd-img"
+              />
         </label>
 
         <ReactHoverObserver

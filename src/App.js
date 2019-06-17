@@ -4,7 +4,6 @@ import uuid from "uuid/v1"; // gera hash a partir do timestamp
 import ChooseTemplate from "./ChooseTemplate";
 import Controller from "./Controller";
 
-
 import generic from "./images/ico.png";
 import assis from "./images/assis.jpg";
 import digital from "./images/digital.jpg";
@@ -100,19 +99,12 @@ class App extends React.Component {
 
   handleChange = (id, file) => {
     this.setState(prevState => {
-      if (!this.state.toggle) {
-        const newItems = prevState.birthdays;
-        const index = newItems.findIndex(card => card.id === id);
-        if (file) {
-          newItems[index].image = URL.createObjectURL(file);
-        }
-
-        return {
-          birthdays: newItems
-        };
-      } else {
-        const newItems = prevState.items;
-        const index = newItems.findIndex(card => card.id === id);
+      var newItems = null;
+      var index = -1;
+      switch(this.state.toggle) {
+        case 1:
+        newItems = prevState.items;
+        index = newItems.findIndex(card => card.id === id);
         if (file) {
           newItems[index].image = URL.createObjectURL(file);
         }
@@ -120,37 +112,63 @@ class App extends React.Component {
         return {
           items: newItems
         };
-      }
+
+        break;
+        
+        case 2:
+          newItems = prevState.birthdays;
+          index = newItems.findIndex(card => card.id === id);
+          if (file) {
+            newItems[index].image = URL.createObjectURL(file);
+          }
+          return {
+            birthdays: newItems
+          };
+        break;
+      
+      default: 
+        console.log("Não foi possível salvar a foto!!!!!!!!!");
+        break;
+
+    }
+    
     });
   };
 
   handleAddCard = () => {
     this.setState(prevState => {
-      if (this.state.toggle) {
-        return {
-          items: prevState.items.concat({
-            id: uuid(),
-            image: generic,
-            name: "",
-            godparent: "",
-            leader: "",
-            team: "",
-            area: "",
-            map: "selecione",
-            imageMap: noimage,
-            logoImage: placeholder
-          })
-        };
-      } else {
-        return {
-          birthdays: prevState.birthdays.concat({
-            id: uuid(),
-            image: generic,
-            name: "",
-            date: "",
-            place: ""
-          })
-        };
+      switch (this.state.toggle) {
+        case 1:
+          return {
+            items: prevState.items.concat({
+              id: uuid(),
+              image: generic,
+              name: "",
+              godparent: "",
+              leader: "",
+              team: "",
+              area: "",
+              map: "selecione",
+              imageMap: noimage,
+              logoImage: placeholder
+            })
+          };
+          break;
+        case 2:
+          {
+            return {
+              birthdays: prevState.birthdays.concat({
+                id: uuid(),
+                image: generic,
+                name: "",
+                date: "",
+                place: ""
+              })
+            };
+          }
+          break;
+        default:
+          console.info("qq tu fez errado ai meu?");
       }
     });
   };
@@ -258,8 +276,8 @@ class App extends React.Component {
       <React.Fragment>
         <div className="container">
           <div id="application">
-            <ChooseTemplate 
-              id={toggle} 
+            <ChooseTemplate
+              id={toggle}
               cards={items}
               handleChange={this.handleChange}
               handleNameChange={this.handleNameChange}
@@ -290,6 +308,5 @@ class App extends React.Component {
     );
   }
 }
-
 
 export default App;
