@@ -48,7 +48,7 @@ $card-light-color: #efefef
                     background: none
                     text-align: center
                     font-size: 30px
-                    width: 100%
+                    width: 30%
                     font-family: 'Source Sans Pro', sans-serif
                     border: none
                     color: #2e4263
@@ -56,6 +56,9 @@ $card-light-color: #efefef
                     font-weight: 600
                     &::placeholder
                         opacity: 0.9
+
+                & .month-hover
+                    border: 2px solid white
         
             & .card-list-bd
                 margin: 20px
@@ -75,6 +78,8 @@ $card-light-color: #efefef
                         text-shadow: 1px 1px white
                         text-align: center
                         width: 100%
+                        &::placeholder
+                            color: red
                             
                 & .card-bd-name-input ,& .card-bd-place-input
                     background: none
@@ -85,8 +90,14 @@ $card-light-color: #efefef
                     font-weight: 500
                     text-shadow: 1px 1px white
                     resize: none
-                    overflow: auto
+                    overflow: hidden
                     height: 24px
+                
+                & .card-bd-hover
+                    border: 2px solid white
+        
+                    
+
 
                 & .hideinput
                     display: none

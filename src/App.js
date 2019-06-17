@@ -42,7 +42,7 @@ class App extends React.Component {
       }
     ],
     birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
-    toggle: true,
+    toggle: false,
     bdMonthText: ""
   };
 

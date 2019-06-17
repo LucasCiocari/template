@@ -52,7 +52,7 @@
   background: none;
   text-align: center;
   font-size: 30px;
-  width: 100%;
+  width: 30%;
   font-family: "Source Sans Pro", sans-serif;
   border: none;
   color: #2e4263;
@@ -61,6 +61,9 @@
 }
 .app-bd .app-bd-balloon .app-bd-confetti .confetti-top .input-date-bd::placeholder {
   opacity: 0.9;
+}
+.app-bd .app-bd-balloon .app-bd-confetti .confetti-top .month-hover {
+  border: 2px solid white;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-list-bd {
   margin: 20px;
@@ -84,6 +87,9 @@
   text-align: center;
   width: 100%;
 }
+.app-bd .app-bd-balloon .app-bd-confetti .card-bd .margin-bd-date .card-bd-date-input::placeholder {
+  color: red;
+}
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-name-input, .app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-place-input {
   background: none;
   border: none;
@@ -93,8 +99,11 @@
   font-weight: 500;
   text-shadow: 1px 1px white;
   resize: none;
-  overflow: auto;
+  overflow: hidden;
   height: 24px;
+}
+.app-bd .app-bd-balloon .app-bd-confetti .card-bd .card-bd-hover {
+  border: 2px solid white;
 }
 .app-bd .app-bd-balloon .app-bd-confetti .card-bd .hideinput {
   display: none;
