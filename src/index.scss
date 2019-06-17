@@ -144,8 +144,14 @@
   text-indent: 1px;
   text-overflow: "";
 }
+.app .carta .div-do-select .text-styling .value-default {
+  display: none;
+}
 .app .carta .div-do-select .text-styling::-ms-expand {
   display: none;
+}
+.app .carta .div-do-select .select-text-warning {
+  color: #de210c !important;
 }
 .app .carta .div-do-select .select-image--azul {
   background-color: #b8bec4;
@@ -248,9 +254,10 @@
 }
 .app .carta .informacoes .padrinho {
   font-size: 18px;
+  margin-bottom: 20px;
 }
-.app .carta .informacoes .scrum {
-  margin-top: 20px;
+.app .carta .informacoes .lider, .app .carta .informacoes .time, .app .carta .informacoes .atuacao {
+  margin-bottom: 3px;
 }
 .app .carta .perfil {
   text-align: center;

@@ -15,11 +15,15 @@ import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
 import downtownibm from "./images/no-image.png";
 import agibankplace from "./images/no-image.png";
-import banrisulplace from "./images/no-image.png"; 
+import banrisulplace from "./images/no-image.png";
+
+import noimage from "./images/no-image.png";
 
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
 import banrisulLogo from "./images/banrisul.png";
+
+import placeholder from "./images/placeholder.png";
 
 class App extends React.Component {
   state = {
@@ -32,9 +36,9 @@ class App extends React.Component {
         leader: "",
         team: "",
         area: "",
-        map: "assis",
-        imageMap: assis,
-        logoImage: sicrediLogo
+        map: "selecione",
+        imageMap: noimage,
+        logoImage: placeholder
       }
     ],
     birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
@@ -136,8 +140,9 @@ class App extends React.Component {
             leader: "",
             team: "",
             area: "",
-            map: "assis",
-            imageMap: assis
+            map: "selecione",
+            imageMap: noimage,
+            logoImage: placeholder
           })
         };
       } else {

@@ -132,8 +132,12 @@ $card-light-color: #efefef
                 -moz-appearance: none
                 text-indent: 1px
                 text-overflow: ''
+                & .value-default
+                    display: none
                 &::-ms-expand 
                     display: none
+            & .select-text-warning
+                color: #de210c !important
             & .select-image--azul
                 background-color: $card-strong-color
                 color: white      
@@ -217,8 +221,10 @@ $card-light-color: #efefef
                 font-size: 24px
             & .padrinho
                 font-size: 18px
-            & .scrum
-                margin-top: 20px
+                margin-bottom: 20px
+            & .lider, & .time, & .atuacao
+                margin-bottom: 3px
+                
         & .perfil
             text-align: center
             margin-top: 25px

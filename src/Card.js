@@ -3,6 +3,7 @@ import classNames from "classnames";
 import AvatarEditor from "react-avatar-editor";
 import ReactHoverObserver from "react-hover-observer";
 
+
 class Card extends React.Component {
   state = {
     enableInput: true,
@@ -10,7 +11,8 @@ class Card extends React.Component {
     godparentIsHovering: false,
     leaderIsHovering: false,
     teamIsHovering: false,
-    roleIsHovering: false
+    roleIsHovering: false,
+    selectIsHovering: false
   };
 
   onHoverNameChanged = ({ isHovering }) => {
@@ -40,7 +42,7 @@ class Card extends React.Component {
   };
   onHoverSelectChanged = ({ isHovering }) => {
     this.setState({
-      SelectIsHovering: isHovering
+      selectIsHovering: isHovering
     });
   };
 
@@ -62,8 +64,7 @@ class Card extends React.Component {
       godparentIsHovering,
       leaderIsHovering,
       teamIsHovering,
-      roleIsHovering,
-      SelectIsHovering
+      roleIsHovering
     } = this.state;
 
     return (
@@ -115,7 +116,7 @@ class Card extends React.Component {
               />
             </ReactHoverObserver>
           </div>
-          <div className="scrum">
+          <div className="lider">
             <ReactHoverObserver
               {...{
                 onHoverChanged: this.onHoverLeaderChanged
@@ -214,17 +215,20 @@ class Card extends React.Component {
             src={card.imageMap}
             alt="sicredi"
           />
+
           <select
             className={classNames(
               "text-styling",
               { "select-image--azul": index % 2 == 0 },
-              { "select-image--branco": index % 2 == 1 }
+              { "select-image--branco": index % 2 == 1 },
+              {"select-text-warning" : card.map === "selecione" }
             )}
             value={card.map}
             onChange={event => {
               handleChangeMap(event.target.value, card.id);
             }}
           >
+            <option value="selecione" className="value-default">Selecione o local</option>
             <option value="assis">CAS - Assis Brasil</option>
             <option value="digital">PUC - Sicredi Digital</option>
             <option value="ibmp">IBM Filial</option>
@@ -232,6 +236,7 @@ class Card extends React.Component {
             <option value="agibankplace">Agibank</option>
             <option value="banrisulplace">Banrisul</option>
           </select>
+        
         </div>
         </div>
     );
