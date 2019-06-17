@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.b589b212.chunk.css",
-    "main.js": "/static/js/main.317a58fd.chunk.js",
+    "main.css": "/static/css/main.243ebe3c.chunk.css",
+    "main.js": "/static/js/main.9dcf5a41.chunk.js",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "static/css/2.521885f1.chunk.css": "/static/css/2.521885f1.chunk.css",
-    "static/js/2.4875b9d5.chunk.js": "/static/js/2.4875b9d5.chunk.js",
+    "static/js/2.f71b75fa.chunk.js": "/static/js/2.f71b75fa.chunk.js",
     "index.html": "/index.html",
-    "precache-manifest.72b517de0748888986efb0f1adaa382e.js": "/precache-manifest.72b517de0748888986efb0f1adaa382e.js",
+    "precache-manifest.395b3bbb7627ebca4e4b5c929691c353.js": "/precache-manifest.395b3bbb7627ebca4e4b5c929691c353.js",
     "service-worker.js": "/service-worker.js",
     "static/media/IBM.png": "/static/media/IBM.6a14ac9e.png",
     "static/media/IBM.jpg": "/static/media/IBM.fdd15cc0.jpg",
