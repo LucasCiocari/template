@@ -9,9 +9,13 @@ $card-light-color: #efefef
     position: fixed
     left: 0
     top: 35%
+    & #cake
+        background-color: #f7e113
+        &::after
+            border-right-color: #f7e113
     & .btn
         border-radius: 0px
-    & .btn-add, & .btn-print, & .btn-toggle, & .btn-remove
+    & .btn-add, & .btn-print, & .btn-building, & .btn-cake, & .btn-remove
         color: white
         display: block
         width: 100%
@@ -21,8 +25,10 @@ $card-light-color: #efefef
         background-color: #f44242
     & .btn-print
         background-color: #19d639
-    & .btn-toggle
+    & .btn-building
         background-color: #2c2c2c
+    & .btn-cake
+        background-color: #efdb21
     
 .app-bd
     background-image: linear-gradient(to right, #c4daff, #e8edf4)
