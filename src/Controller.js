@@ -25,11 +25,11 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
         </ReactTooltip>
 
         <ReactTooltip id='building' type='dark' effect='solid'>
-            <span>template - Bem-vindo</span>
+            <span> Template - Bem-vindo</span>
         </ReactTooltip>
 
         <ReactTooltip id='cake' effect='solid'>
-            <span>template - Aniversario</span>
+            <span> Template - Aniversario</span>
         </ReactTooltip>
 
         
