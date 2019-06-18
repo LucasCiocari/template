@@ -24,8 +24,12 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
             <span>Salvar como Imagem</span>
         </ReactTooltip>
 
-        <ReactTooltip id='toggle' type='dark' effect='solid'>
-            <span>Trocar de template</span>
+        <ReactTooltip id='building' type='dark' effect='solid'>
+            <span> Template - Bem-vindo</span>
+        </ReactTooltip>
+
+        <ReactTooltip id='cake' effect='solid'>
+            <span> Template - Aniversario</span>
         </ReactTooltip>
 
         
@@ -54,18 +58,15 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
             }
         }>{iconePrint}
         </button>
-        <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={
+        <button className="save-photo btn btn-building" data-tip data-for="building" onClick={
             () => handleToggle(1)
             }>
             {iconBuilding}
         </button>
 
-        <button className="save-photo btn btn-toggle" data-tip data-for="toggle" onClick={() => handleToggle(2)}>
+        <button className="save-photo btn btn-cake" data-tip data-for="cake" onClick={() => handleToggle(2)}>
             {iconBdCake}
         </button>
-        
-        
-
         <button className="card-list-button btn btn-add" data-tip data-for="adicionar" onClick={onAddCard}>{iconeAdicionar}</button> 
         <button className="card-list-button btn btn-remove" data-tip data-for="remover" onClick={onRemoveCard}>{iconMinus}</button>
     </div>
