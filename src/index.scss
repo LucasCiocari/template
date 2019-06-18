@@ -132,7 +132,7 @@
   display: grid;
   text-align-last: center;
   margin-right: 50px;
-  padding-left: 100px;
+  margin-left: 50px;
 }
 .app .carta .div-do-select .selected-place {
   text-align: center;
@@ -171,12 +171,11 @@
   color: #495057;
 }
 .app .carta .div-do-select .imagem-selecionada {
-  margin: 10% 0px 0px 0px;
   border-radius: 25%;
   position: relative;
   float: left;
-  width: 150px;
-  height: 150px;
+  width: 165px;
+  height: 165px;
 }
 .app .carta #nomeFuncionario, .app .carta #nomePadrinho {
   margin-bottom: 3px;
@@ -188,6 +187,13 @@
 .app .carta #nomePadrinho {
   font-size: 18px;
 }
+.app .carta .dropdown-principal {
+  border: none;
+  margin-top: 15px;
+  padding: 0px;
+  max-height: 35px;
+  max-width: 150px;
+}
 .app .carta--azul .form-control {
   background-color: #b8bec4;
   border: none;
@@ -197,6 +203,20 @@
 }
 .app .carta--azul .form-control::placeholder {
   color: white;
+}
+.app .carta--azul .dropdown-principal .dropdown-image {
+  align-items: center;
+  max-height: 35px;
+  max-width: 150px;
+}
+.app .carta--azul .dropdown-principal .dropdown-item-style {
+  background-color: #b8bec4;
+  padding: 0px;
+  border-radius: 2px;
+  height: 40px;
+}
+.app .carta--azul .dropdown-principal .dropdown-item-style:hover {
+  background-color: pink;
 }
 .app .carta--azul .form-control-hover {
   border: 2px solid white;
@@ -208,6 +228,19 @@
 }
 .app .carta--branca .form-control-hover {
   border: 2px solid gray;
+}
+.app .carta--branca .dropdown-principal {
+  background-color: #efefef;
+}
+.app .carta--branca .dropdown-principal .dropdown-image {
+  text-align: center;
+  max-height: 35px;
+  max-width: 150px;
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+.app .carta--branca .dropdown-principal .dropdown-item-style {
+  background-color: #efefef;
 }
 
 .app {

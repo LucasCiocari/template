@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "./Card";
 
-const CardList = ({ cards, handleChange, handleNameChange, handleGodparentChange, handleLeaderChange, handleTeamChange, handleAreaChange, handleChangeMap}) => (
+const CardList = ({ cards, handleChange, handleNameChange, handleGodparentChange, handleLeaderChange, handleTeamChange, handleAreaChange, handleChangeMap, handleChangeLogo}) => (
   <React.Fragment>
     <div className="card-list">
       {cards.map((card, index) => (
@@ -17,6 +17,7 @@ const CardList = ({ cards, handleChange, handleNameChange, handleGodparentChange
           handleTeamChange={handleTeamChange}
           handleAreaChange={handleAreaChange}
           handleChangeMap={handleChangeMap}
+          handleChangeLogo={handleChangeLogo}
         />
       ))}
     </div>

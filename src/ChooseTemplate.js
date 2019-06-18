@@ -23,7 +23,8 @@ class ChooseTemplate extends React.Component {
       handlePlaceBdChange,
       handleDateBdChange,
       bdMonthText,
-      handleBdMonthChange
+      handleBdMonthChange,
+      handleChangeLogo
     } = this.props;
     switch (id) {
       case 1:
@@ -39,6 +40,7 @@ class ChooseTemplate extends React.Component {
               handleTeamChange={handleTeamChange}
               handleAreaChange={handleAreaChange}
               handleChangeMap={handleChangeMap}
+              handleChangeLogo={handleChangeLogo}
             />
             <Footer />
           </div>

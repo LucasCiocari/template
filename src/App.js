@@ -10,15 +10,12 @@ import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
 import downtownibm from "./images/no-image.png";
 import agibankplace from "./images/no-image.png";
-import banrisulplace from "./images/no-image.png";
-
-import noimage from "./images/no-image.png";
 
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
-import banrisulLogo from "./images/banrisul.png";
-
 import placeholder from "./images/placeholder.png";
+
+import noimage from "./images/no-image.png";
 
 class App extends React.Component {
   state = {
@@ -33,7 +30,7 @@ class App extends React.Component {
         area: "",
         map: "selecione",
         imageMap: noimage,
-        logoImage: placeholder
+        logoSelectValue: placeholder
       }
     ],
     birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
@@ -101,20 +98,20 @@ class App extends React.Component {
     this.setState(prevState => {
       var newItems = null;
       var index = -1;
-      switch(this.state.toggle) {
+      switch (this.state.toggle) {
         case 1:
-        newItems = prevState.items;
-        index = newItems.findIndex(card => card.id === id);
-        if (file) {
-          newItems[index].image = URL.createObjectURL(file);
-        }
+          newItems = prevState.items;
+          index = newItems.findIndex(card => card.id === id);
+          if (file) {
+            newItems[index].image = URL.createObjectURL(file);
+          }
 
-        return {
-          items: newItems
-        };
+          return {
+            items: newItems
+          };
 
-        break;
-        
+          break;
+
         case 2:
           newItems = prevState.birthdays;
           index = newItems.findIndex(card => card.id === id);
@@ -124,14 +121,12 @@ class App extends React.Component {
           return {
             birthdays: newItems
           };
-        break;
-      
-      default: 
-        console.log("Não foi possível salvar a foto!!!!!!!!!");
-        break;
+          break;
 
-    }
-    
+        default:
+          console.log("Não foi possível salvar a foto!!!!!!!!!");
+          break;
+      }
     });
   };
 
@@ -149,8 +144,8 @@ class App extends React.Component {
               team: "",
               area: "",
               map: "selecione",
-              imageMap: noimage,
-              logoImage: placeholder
+              imageMap: noimage
+              
             })
           };
           break;
@@ -175,23 +170,50 @@ class App extends React.Component {
 
   handleRemoveCard = () => {
     this.setState(prevState => {
-      if (this.state.toggle) {
-        const newItems = prevState.items.slice();
-        const index = newItems.length - 1;
-        console.log(index);
-        const ret = newItems.splice(index, 1)[0];
-        return {
-          items: newItems
-        };
-      } else {
-        const newItems = prevState.birthdays.slice();
-        const index = newItems.length - 1;
-        const ret = newItems.splice(index, 1)[0];
+      const { toggle } = this.state;
+      var newItems = null;
+      var index = null;
+      var ret = null;
+      switch (toggle) {
+        case 1:
+          newItems = prevState.items.slice();
+          index = newItems.length - 1;
+          ret = newItems.splice(index, 1)[0];
+          return {
+            items: newItems
+          };
+          break;
 
-        return {
-          birthdays: newItems
-        };
+        case 2:
+          newItems = prevState.birthdays.slice();
+          index = newItems.length - 1;
+          ret = newItems.splice(index, 1)[0];
+
+          return {
+            birthdays: newItems
+          };
+          break;
+        default:
+          break;
       }
+    });
+  };
+
+  handleChangeLogo = (logo, id) => {
+    this.setState(prevState => {
+      const newItems = prevState.items;
+      const index = newItems.findIndex(card => card.id === id);
+      if (logo == "sicredi") {
+        newItems[index].logoSelectValue = sicrediLogo;
+      }
+
+      if (logo == "agibank") {
+        newItems[index].logoSelectValue = agibankLogo;
+      }
+
+      return {
+        items: newItems
+      };
     });
   };
 
@@ -235,32 +257,22 @@ class App extends React.Component {
 
       if (value == "assis") {
         newItems[index].imageMap = assis;
-        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "digital") {
         newItems[index].imageMap = digital;
-        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "ibmp") {
         newItems[index].imageMap = ibmp;
-        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "downtownibm") {
         newItems[index].imageMap = downtownibm;
-        newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "agibankplace") {
         newItems[index].imageMap = agibankplace;
-        newItems[index].logoImage = agibankLogo;
-      }
-
-      if (value == "banrisulplace") {
-        newItems[index].imageMap = banrisulplace;
-        newItems[index].logoImage = banrisulLogo;
       }
 
       return {
@@ -292,6 +304,7 @@ class App extends React.Component {
               handleDateBdChange={this.handleDateBdChange}
               bdMonthText={bdMonthText}
               handleBdMonthChange={this.handleBdMonthChange}
+              handleChangeLogo={this.handleChangeLogo}
             />
           </div>
         </div>

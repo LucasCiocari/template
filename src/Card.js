@@ -2,7 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import AvatarEditor from "react-avatar-editor";
 import ReactHoverObserver from "react-hover-observer";
+import { Dropdown } from "semantic-ui-react";
 
+import sicrediLogo from "./images/sicredi.png";
+import agibankLogo from "./images/agibank.png";
+import placeholder from "./images/placeholder.png";
 
 class Card extends React.Component {
   state = {
@@ -56,7 +60,8 @@ class Card extends React.Component {
       handleLeaderChange,
       handleTeamChange,
       handleAreaChange,
-      handleChangeMap
+      handleChangeMap,
+      handleChangeLogo
     } = this.props;
 
     const {
@@ -178,38 +183,58 @@ class Card extends React.Component {
           </div>
         </div>
 
-        
-          <div className="perfil">
-            <label>
-              {this.state.enableInput ? (
-                <input
-                  className="hideinput"
-                  type="file"
-                  name="image"
-                  id="image"
-                  onChange={event => {
-                    this.setState({
-                      enableInput: false
-                    });
-                    handleChange(card.id, event.target.files[0]);
-                  }}
-                />
-              ) : (
-                <React.Fragment />
-              )}
-              {/* <img src={card.image} alt="Foto"/> */}
-              <AvatarEditor
-                image={card.image}
-                width={200}
-                height={200}
-                border={0}
-                borderRadius={20}
-                className="avatar-editor"
+        <div className="perfil">
+          <label>
+            {this.state.enableInput ? (
+              <input
+                className="hideinput"
+                type="file"
+                name="image"
+                id="image"
+                onChange={event => {
+                  this.setState({
+                    enableInput: false
+                  });
+                  handleChange(card.id, event.target.files[0]);
+                }}
               />
-            </label>
+            ) : (
+              <React.Fragment />
+            )}
+            {/* <img src={card.image} alt="Foto"/> */}
+            <AvatarEditor
+              image={card.image}
+              width={200}
+              height={200}
+              border={0}
+              borderRadius={20}
+              className="avatar-editor"
+            />
+          </label>
+        </div>
+
+        <div className="div-do-select">
+          <div className="dropdown dropright">
+            <button
+              className="btn btn-secondary dropdown-principal"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img src={card.logoSelectValue} className="dropdown-image"></img>
+            </button>
+            <div className="dropdown-menu dropdown-principal" aria-labelledby="dropdownMenuButton">
+              <button className="dropdown-item dropdown-item-style" onClick={ () => { handleChangeLogo("agibank", card.id)}}>
+              <img src={agibankLogo} className="dropdown-image"></img>
+              </button>
+              <button className="dropdown-item dropdown-item-style" onClick={ () => { handleChangeLogo("sicredi", card.id)}}>
+                <img src={sicrediLogo} className="dropdown-image"></img>
+              </button>
+            </div>
           </div>
-          <div className="div-do-select">
-          <img className="selected-place" src={card.logoImage}/>
+
           <img
             className="imagem-selecionada"
             src={card.imageMap}
@@ -221,24 +246,24 @@ class Card extends React.Component {
               "text-styling",
               { "select-image--azul": index % 2 == 0 },
               { "select-image--branco": index % 2 == 1 },
-              {"select-text-warning" : card.map === "selecione" }
+              { "select-text-warning": card.map === "selecione" }
             )}
             value={card.map}
             onChange={event => {
               handleChangeMap(event.target.value, card.id);
             }}
           >
-            <option value="selecione" className="value-default">SELECIONE LOCAL</option>
+            <option value="selecione" className="value-default">
+              SELECIONE LOCAL
+            </option>
             <option value="assis">CAS - Assis Brasil</option>
             <option value="digital">PUC - Sicredi Digital</option>
             <option value="ibmp">IBM Filial</option>
             <option value="downtownibm">CAS - Alberto Bins</option>
             <option value="agibankplace">Agibank</option>
-            <option value="banrisulplace">Banrisul</option>
           </select>
-        
         </div>
-        </div>
+      </div>
     );
   }
 }

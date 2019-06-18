@@ -26,6 +26,7 @@
     "react-iframe": "^1.8.0",
     "react-textarea-autosize": "^7.1.0",
     "react-tooltip": "^3.10.0",
+    "semantic-ui-react": "^0.87.2",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
