@@ -219,24 +219,42 @@ class Card extends React.Component {
         </div>
 
         <div className="div-do-select">
-          <div className="dropdown dropright">
-            <button
-              className="btn btn-secondary dropdown-principal"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <img src={card.logoSelectValue} className="dropdown-image"></img>
-            </button>
-            <div className="dropdown-menu dropdown-principal" aria-labelledby="dropdownMenuButton">
-              <button className="dropdown-item dropdown-item-style" onClick={ () => { handleChangeLogo("agibank", card.id)}}>
-              <img src={agibankLogo} className="dropdown-image"></img>
+          <div className="select-place">
+            <div className="dropdown">
+              <button
+                className="btn dropdown-principal "
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img src={card.logoSelectValue} className="dropdown-image" />
               </button>
-              <button className="dropdown-item dropdown-item-style" onClick={ () => { handleChangeLogo("sicredi", card.id)}}>
-                <img src={sicrediLogo} className="dropdown-image"></img>
-              </button>
+
+              <div
+                className="dropdown-menu dropdown-principal"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <a
+                  className="dropdown-item dropdown-item-style"
+                  onClick={() => {
+                    handleChangeLogo("agibank", card.id);
+                  }}
+                >
+                  <img src={agibankLogo} className="dropdown-item-style" />
+                </a>
+                
+                <a
+                  className="dropdown-item dropdown-item-style"
+                  onClick={() => {
+                    handleChangeLogo("sicredi", card.id);
+                  }}
+                >
+                  <img src={sicrediLogo} className="dropdown-item-style" />
+                </a>
+                
+              </div>
             </div>
           </div>
 

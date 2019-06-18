@@ -10,16 +10,11 @@ import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
 import casalbertobins from "./images/cas-alberto-bins.png";
 import agibankplace from "./images/agibank-place.png";
-
 import noimage from "./images/no-image.png";
-
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
-import ibmlogo from "./images/IBM.png";
-
 import placeholder from "./images/placeholder.png";
 
-import noimage from "./images/no-image.png";
 
 class App extends React.Component {
   state = {
@@ -148,7 +143,8 @@ class App extends React.Component {
               team: "",
               area: "",
               map: "selecione",
-              imageMap: noimage
+              imageMap: noimage,
+              logoSelectValue: placeholder
               
             })
           };
