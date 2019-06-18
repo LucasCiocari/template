@@ -145,7 +145,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverTeamChanged
               }}
             >
-              <div className="text-inputs">Nome do Time:</div>
+              <div className="text-inputs">Time:</div>
               <input
                 type="text"
                 value={card.team}
@@ -166,7 +166,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverRoleChanged
               }}
             >
-              <div className="text-inputs">Área de atuação:</div>
+              <div className="text-inputs">Área:</div>
               <input
                 type="text"
                 value={card.area}
