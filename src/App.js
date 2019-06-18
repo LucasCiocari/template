@@ -8,15 +8,14 @@ import generic from "./images/ico.png";
 import assis from "./images/assis.jpg";
 import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
-import downtownibm from "./images/no-image.png";
-import agibankplace from "./images/no-image.png";
-import banrisulplace from "./images/no-image.png";
+import casalbertobins from "./images/cas-alberto-bins.png";
+import agibankplace from "./images/agibank-place.png";
 
 import noimage from "./images/no-image.png";
 
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
-import banrisulLogo from "./images/banrisul.png";
+import ibmlogo from "./images/IBM.png";
 
 import placeholder from "./images/placeholder.png";
 
@@ -245,22 +244,17 @@ class App extends React.Component {
 
       if (value == "ibmp") {
         newItems[index].imageMap = ibmp;
-        newItems[index].logoImage = sicrediLogo;
+        newItems[index].logoImage = ibmlogo;
       }
 
       if (value == "downtownibm") {
-        newItems[index].imageMap = downtownibm;
+        newItems[index].imageMap = casalbertobins;
         newItems[index].logoImage = sicrediLogo;
       }
 
       if (value == "agibankplace") {
         newItems[index].imageMap = agibankplace;
         newItems[index].logoImage = agibankLogo;
-      }
-
-      if (value == "banrisulplace") {
-        newItems[index].imageMap = banrisulplace;
-        newItems[index].logoImage = banrisulLogo;
       }
 
       return {

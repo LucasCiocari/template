@@ -163,7 +163,7 @@
   color: #de210c !important;
 }
 .app .carta .div-do-select .select-image--azul {
-  background-color: #b8bec4;
+  background-color: #c9d3e2;
   color: white;
 }
 .app .carta .div-do-select .select-image--branco {
@@ -178,36 +178,32 @@
   width: 150px;
   height: 150px;
 }
-.app .carta #nomeFuncionario, .app .carta #nomePadrinho {
-  margin-bottom: 3px;
-  white-space: nowrap;
-}
-.app .carta #nomeFuncionario {
-  font-size: 24px;
-}
-.app .carta #nomePadrinho {
-  font-size: 18px;
-}
 .app .carta--azul .form-control {
-  background-color: #b8bec4;
+  background-color: #c9d3e2;
   border: none;
-  color: white;
+  color: black;
   padding: 0px;
   font-weight: 500;
 }
 .app .carta--azul .form-control::placeholder {
-  color: white;
+  color: gray;
 }
 .app .carta--azul .form-control-hover {
-  border: 2px solid white;
+  border: 2px solid gray;
 }
 .app .carta--branca .form-control {
   background-color: #efefef;
   border: none;
+  color: black;
   font-weight: 500;
+  padding: 0;
 }
 .app .carta--branca .form-control-hover {
   border: 2px solid gray;
+}
+.app .text-inputs {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 12 px;
 }
 
 .app {
@@ -252,25 +248,24 @@
 .app .carta .informacoes {
   flex: 1;
   padding: 10px 15px 10px 15px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .app .carta .informacoes .nome, .app .carta .informacoes .padrinho {
-  letter-spacing: 4px;
   white-space: nowrap;
+  font-size: 16px;
 }
 .app .carta .informacoes .nome {
-  font-size: 24px;
+  font-size: 14px;
 }
 .app .carta .informacoes .padrinho {
-  font-size: 18px;
-  margin-bottom: 20px;
+  font-size: 14px;
 }
 .app .carta .informacoes .lider, .app .carta .informacoes .time, .app .carta .informacoes .atuacao {
-  margin-bottom: 3px;
+  font-size: 14px;
 }
 .app .carta .perfil {
   text-align: center;
-  margin-top: 25px;
+  margin-top: 50px;
   margin-right: -70px;
   display: inline-block;
   flex: 1;
@@ -283,15 +278,13 @@
   border-radius: 25%;
   position: relative;
   float: left;
-  width: 200px;
-  height: 200px;
   cursor: pointer;
 }
 .app .carta .perfil .avatar-editor:hover {
   opacity: 0.6;
 }
 .app .carta--azul {
-  background-color: #b8bec4;
+  background-color: #c9d3e2;
 }
 .app .carta--branca {
   background-color: #efefef;

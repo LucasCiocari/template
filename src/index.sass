@@ -2,7 +2,7 @@
 
 $card-hf-font: 'Roboto Slab'
 $card-hf-font-type: serif
-$card-strong-color: #b8bec4
+$card-strong-color: #c9d3e2
 $card-light-color: #efefef
 
 .botoes
@@ -95,9 +95,6 @@ $card-light-color: #efefef
                 
                 & .card-bd-hover
                     border: 2px solid white
-        
-                    
-
 
                 & .hideinput
                     display: none
@@ -162,32 +159,29 @@ $card-light-color: #efefef
                 float: left
                 width:  150px
                 height: 150px
-            
-        & #nomeFuncionario, & #nomePadrinho
-            margin-bottom: 3px
-            white-space: nowrap
-        & #nomeFuncionario
-            font-size: 24px
-        & #nomePadrinho
-            font-size: 18px
     & .carta--azul
         & .form-control
             background-color: $card-strong-color
             border: none
-            color: white
+            color: black
             padding: 0px
             font-weight: 500
             &::placeholder
-                color: white
+                color: gray
         & .form-control-hover
-            border: 2px solid white
+            border: 2px solid gray
     & .carta--branca
         & .form-control
             background-color: $card-light-color
             border: none
+            color: black
             font-weight: 500
+            padding: 0
         & .form-control-hover
             border: 2px solid gray
+    & .text-inputs
+            font-family: 'Roboto Mono', sans-serif
+            font-size: 12 px
             
 .app
     margin: auto
@@ -224,21 +218,20 @@ $card-light-color: #efefef
         & .informacoes
             flex: 1
             padding: 10px 15px 10px 15px
-            font-family: 'Roboto', sans-serif
+            font-family: 'Open Sans', sans-serif
             & .nome, & .padrinho
-                letter-spacing: 4px
                 white-space: nowrap
+                font-size: 16px
             & .nome
-                font-size: 24px
+                font-size: 14px
             & .padrinho
-                font-size: 18px
-                margin-bottom: 20px
+                font-size: 14px
             & .lider, & .time, & .atuacao
-                margin-bottom: 3px
+                font-size: 14px
                 
         & .perfil
             text-align: center
-            margin-top: 25px
+            margin-top: 50px
             margin-right: -70px
             display: inline-block
             flex: 1
@@ -249,8 +242,6 @@ $card-light-color: #efefef
                 border-radius: 25%
                 position: relative
                 float: left
-                width:  200px
-                height: 200px
                 cursor: pointer
                 &:hover 
                     opacity: 0.6

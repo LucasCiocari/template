@@ -82,6 +82,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverNameChanged
               }}
             >
+              <div className="text-inputs">Funcionario:</div>
               <input
                 type="text"
                 value={card.name}
@@ -102,6 +103,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverGodparentChanged
               }}
             >
+              <div className="text-inputs">Padrinho:</div>
               <input
                 type="text"
                 value={card.godparent}
@@ -122,6 +124,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverLeaderChanged
               }}
             >
+              <div className="text-inputs">Lider:</div>
               <input
                 type="text"
                 value={card.leader}
@@ -142,6 +145,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverTeamChanged
               }}
             >
+              <div className="text-inputs">Nome do Time:</div>
               <input
                 type="text"
                 value={card.team}
@@ -162,6 +166,7 @@ class Card extends React.Component {
                 onHoverChanged: this.onHoverRoleChanged
               }}
             >
+              <div className="text-inputs">Área de atuação:</div>
               <input
                 type="text"
                 value={card.area}
@@ -200,8 +205,8 @@ class Card extends React.Component {
               {/* <img src={card.image} alt="Foto"/> */}
               <AvatarEditor
                 image={card.image}
-                width={200}
-                height={200}
+                width={220}
+                height={220}
                 border={0}
                 borderRadius={20}
                 className="avatar-editor"
@@ -234,7 +239,6 @@ class Card extends React.Component {
             <option value="ibmp">IBM Filial</option>
             <option value="downtownibm">CAS - Alberto Bins</option>
             <option value="agibankplace">Agibank</option>
-            <option value="banrisulplace">Banrisul</option>
           </select>
         
         </div>
