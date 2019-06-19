@@ -331,14 +331,15 @@
 .app .carta .perfil .hideinput {
   display: none;
 }
-.app .carta .perfil .avatar-editor {
+.app .carta .perfil .prof-image {
+  text-align: center;
   opacity: 1;
   border-radius: 25%;
   position: relative;
   float: left;
   cursor: pointer;
 }
-.app .carta .perfil .avatar-editor:hover {
+.app .carta .perfil .prof-image:hover {
   opacity: 0.6;
 }
 .app .carta--azul {
@@ -347,6 +348,20 @@
 .app .carta--branca {
   background-color: #efefef;
   color: black;
+}
+
+.avatar-editor {
+  opacity: 1;
+  border-radius: 25%;
+  position: relative;
+  cursor: pointer;
+}
+.avatar-editor:hover {
+  opacity: 0.6;
+}
+
+.button-modal {
+  margin: 0;
 }
 
 /*# sourceMappingURL=index.scss.map */

@@ -286,7 +286,8 @@ $card-light-color: #efefef
             flex: 1
             & .hideinput
                 display: none
-            & .avatar-editor
+            & .prof-image
+                text-align: center
                 opacity: 1
                 border-radius: 25%
                 position: relative
@@ -294,9 +295,24 @@ $card-light-color: #efefef
                 cursor: pointer
                 &:hover 
                     opacity: 0.6
+            
+            
+
                     
     & .carta--azul
         background-color: $card-strong-color
     & .carta--branca
         background-color: $card-light-color
         color: black
+
+
+.avatar-editor
+    opacity: 1
+    border-radius: 25%
+    position: relative
+    cursor: pointer
+    &:hover 
+        opacity: 0.6
+
+.button-modal
+    margin: 0
