@@ -4,6 +4,8 @@ $card-hf-font: 'Roboto Slab'
 $card-hf-font-type: serif
 $card-strong-color: #c9d3e2
 $card-light-color: #efefef
+$birthday-confetti: url("./images/confetti.png")
+$birthday-balloons: url("./images/balao.png")
 
 .botoes
     position: fixed
@@ -35,11 +37,11 @@ $card-light-color: #efefef
     width: 100%
     border: 1px gray solid
     & .app-bd-balloon
-        background-image: url("./images/balao.png")   
+        background-image: $birthday-balloons
         background-repeat: repeat
         background-size: 100%
         & .app-bd-confetti
-            background-image: url("./images/confettipng.png")   
+            background-image: $birthday-confetti 
             background-repeat: repeat 
             & .confetti-top
                 text-align: center

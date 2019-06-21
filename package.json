@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel ./public/index.html",
+    "sassWatch": "sass --watch ./src/index.sass ./src/index.scss",
     "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build && bx target --cf && bx app push ibmtemplates"
   },
   "author": "Andrei Cruz, Lucas Ciocari, Thiago Miranda",
