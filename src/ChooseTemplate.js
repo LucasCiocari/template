@@ -1,10 +1,12 @@
 import React from "react";
-import Footer from "./Footer";
-import FooterBirthday from "./FooterBirthday";
-import CardListBirthday from "./CardListBirthday";
-import HeaderBirthday from "./HeaderBirthday";
-import Header from "./Header";
-import CardList from "./CardList";
+
+
+import Footer from "./welcome/Footer";
+import FooterBirthday from "./birthday/FooterBirthday";
+import CardListBirthday from "./birthday/CardListBirthday";
+import HeaderBirthday from "./birthday/HeaderBirthday";
+import Header from "./welcome/Header";
+import CardList from "./welcome/CardList";
 
 class ChooseTemplate extends React.Component {
   render() {
