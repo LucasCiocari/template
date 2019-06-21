@@ -115,7 +115,7 @@ class App extends React.Component {
           newItems = prevState.birthdays;
           index = newItems.findIndex(card => card.id === id);
           if (file) {
-            newItems[index].image = URL.createObjectURL(file);
+            newItems[index].image = file.toDataURL();
           }
           return {
             birthdays: newItems

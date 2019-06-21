@@ -4,9 +4,7 @@ import AvatarEditor from "react-avatar-editor";
 import ReactHoverObserver from "react-hover-observer";
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
-import placeholder from "./images/placeholder.png";
 import { Modal, Button } from "react-bootstrap";
-import { Slider } from "antd";
 
 
 class Card extends React.Component {
@@ -280,10 +278,10 @@ class Card extends React.Component {
                       </div>
                       <Button variant="secondary" onClick={this.handleCloseModal}>
                         Fechar
-          </Button>
+                      </Button>
                       <Button variant="primary" onClick={() => { this.handleCloseModal(); handleChange(card.id, this.onClickSave()); }}>
                         Salvar Mudanças
-          </Button>
+                      </Button>
                     </Modal.Footer>
                   </Modal>
                 </React.Fragment>
