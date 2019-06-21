@@ -8,7 +8,7 @@ import generic from "./images/ico.png";
 import assis from "./images/assis.jpg";
 import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
-import casalbertobins from "./images/cas-alberto-bins.png";
+import casalbertobins from "./images/cas-alberto-bins.jpeg";
 import agibankplace from "./images/agibank-place.png";
 import noimage from "./images/default-image.jpg";
 import sicrediLogo from "./images/sicredi.png";
@@ -27,7 +27,7 @@ class App extends React.Component {
         leader: "",
         team: "",
         area: "",
-        map: "selecione",
+        map: "Selecione Lugar",
         imageMap: noimage,
         logoSelectValue: placeholder
       }
@@ -142,7 +142,7 @@ class App extends React.Component {
               leader: "",
               team: "",
               area: "",
-              map: "selecione",
+              map: "Selecione Lugar",
               imageMap: noimage,
               logoSelectValue: placeholder
               
@@ -257,22 +257,27 @@ class App extends React.Component {
 
       if (value == "assis") {
         newItems[index].imageMap = assis;
+        newItems[index].map = "CAS - Assis Brasil";
       }
 
       if (value == "digital") {
         newItems[index].imageMap = digital;
+        newItems[index].map = "PUC - Sicredi Digital"
       }
 
       if (value == "ibmp") {
         newItems[index].imageMap = ibmp;
+        newItems[index].map = "IBM Filial"
       }
 
       if (value == "downtownibm") {
         newItems[index].imageMap = casalbertobins;
+        newItems[index].map = "CAS - Alberto Bins"
       }
 
       if (value == "agibankplace") {
         newItems[index].imageMap = agibankplace;
+        newItems[index].map = "Agibank Mostardeiro"
       }
 
       return {

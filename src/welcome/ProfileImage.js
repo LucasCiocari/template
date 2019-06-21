@@ -75,24 +75,27 @@ class ProfileImage extends React.Component {
                 </Modal.Header>
                 <Modal.Body style={{ textAlign: "center" }}>
 
-                  
+
                   <AvatarEditor
                     ref={this.setEditorRef}
-                    image={this.state.imageInput} width={220} height={220} border={0} borderRadius={20}
+                    image={this.state.imageInput} width={200} height={200} border={0} borderRadius={20}
                     className="avatar-editor"
                   />
                 </Modal.Body>
                 <Modal.Footer>
-                  <label className="btn btn-warning button-modal">
-                    <input hidden type="file"
-                      onChange={event => {
-                        this.setState({
-                          enableInput: false,
-                          imageInput: event.target.files[0]
-                        });
-                      }} />
-                    Trocar foto
+                  <div>
+                    <label className="btn btn-warning button-modal">
+                      <input
+                        hidden
+                        type="file"
+                        onChange={event => {
+                          this.setState({
+                            enableInput: false,
+                            imageToModal: event.target.files[0]
+                          });
+                        }} /> Trocar foto
                     </label>
+                  </div>
 
                   <Button variant="secondary" onClick={this.handleCloseModal}>
                     Fechar

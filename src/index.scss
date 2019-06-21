@@ -137,16 +137,53 @@
 
 .app .carta .div-do-select {
   display: grid;
-  text-align-last: center;
   margin-right: 50px;
   margin-left: 50px;
 }
-.app .carta .div-do-select .selected-place {
-  text-align: center;
+.app .carta .div-do-select .select-place {
+  text-align-last: center;
+}
+.app .carta .div-do-select .select-place #dropdown-logo {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  align-content: center;
+}
+.app .carta .div-do-select .select-place #dropdown-logo #dropdown-logo-toggle {
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+.app .carta .div-do-select .select-place #dropdown-logo #dropdown-logo-toggle::after {
+  display: none;
+}
+.app .carta .div-do-select .select-place #dropdown-logo .dropdown-image {
+  align-items: center;
   max-height: 35px;
   max-width: 150px;
-  margin-top: 15px;
-  margin-bottom: -10px;
+  padding: 0px;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+}
+.app .carta .div-do-select #dropdown-place {
+  padding: 0px;
+  margin: 0px;
+  align-content: center;
+}
+.app .carta .div-do-select #dropdown-place #dropdown-place-toggle {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-top: -15px;
+}
+.app .carta .div-do-select #dropdown-place #dropdown-place-toggle::after {
+  display: none;
 }
 .app .carta .div-do-select .text-styling {
   font-family: "Roboto", sans-serif;
@@ -182,8 +219,8 @@
   border-radius: 25%;
   position: relative;
   float: left;
-  width: 165px;
-  height: 165px;
+  width: 200px;
+  height: 200px;
 }
 .app .carta #nomeFuncionario, .app .carta #nomePadrinho {
   margin-bottom: 3px;
@@ -195,15 +232,6 @@
 .app .carta #nomePadrinho {
   font-size: 18px;
 }
-.app .carta .select-place {
-  margin-top: 15px;
-}
-.app .carta .select-place .dropdown-principal {
-  border: none;
-  padding: 0px;
-  max-height: 35px;
-  max-width: 150px;
-}
 .app .carta--azul .form-control {
   background-color: #c9d3e2;
   border: none;
@@ -213,21 +241,6 @@
 }
 .app .carta--azul .form-control::placeholder {
   color: gray;
-}
-.app .carta--azul .dropdown-principal .dropdown-image {
-  align-items: center;
-  max-height: 35px;
-  max-width: 150px;
-  background-color: #c9d3e2;
-}
-.app .carta--azul .dropdown-principal .dropdown-item-style {
-  background-color: #c9d3e2;
-  padding: 0px;
-  border-radius: 2px;
-  height: 30px;
-}
-.app .carta--azul .dropdown-principal .dropdown-item-style:hover {
-  opacity: 0.7;
 }
 .app .carta--azul .form-control-hover {
   border: 2px solid gray;
@@ -241,21 +254,6 @@
 }
 .app .carta--branca .form-control-hover {
   border: 2px solid gray;
-}
-.app .carta--branca .dropdown-principal .dropdown-image {
-  align-items: center;
-  max-height: 35px;
-  max-width: 150px;
-  background-color: #efefef;
-}
-.app .carta--branca .dropdown-principal .dropdown-item-style {
-  background-color: #efefef;
-  padding: 0px;
-  border-radius: 2px;
-  height: 30px;
-}
-.app .carta--branca .dropdown-principal .dropdown-item-style:hover {
-  opacity: 0.7;
 }
 .app .text-inputs {
   font-family: "Roboto Mono", sans-serif;

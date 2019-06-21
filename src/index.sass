@@ -1,5 +1,3 @@
-// Cartas
-
 $card-hf-font: 'Roboto Slab'
 $card-hf-font-type: serif
 $card-strong-color: #c9d3e2
@@ -127,15 +125,45 @@ $birthday-balloons: url("./images/balao.png")
     & .carta
         & .div-do-select
             display: grid
-            text-align-last: center
             margin-right: 50px
             margin-left: 50px
-            & .selected-place
-                text-align: center
-                max-height: 35px
-                max-width: 150px
-                margin-top: 15px
-                margin-bottom: -10px
+            & .select-place
+                text-align-last: center
+                & #dropdown-logo
+                    padding: 0px
+                    margin: 0px
+                    margin-top: 20px
+                    margin-bottom: -10px
+                    align-content: center
+                    & #dropdown-logo-toggle
+                        background-color: inherit
+                        width: 100%
+                        height: 100%
+                        padding: 0px
+                        margin: 0px
+                        border: none
+                        &::after
+                            display: none
+                    & .dropdown-image
+                        align-items: center
+                        max-height: 35px
+                        max-width: 150px
+                        padding: 0px
+                        border-radius: 2px
+                        width: 100%
+                        height: 100%
+            & #dropdown-place
+                padding: 0px
+                margin: 0px
+                align-content: center
+                & #dropdown-place-toggle
+                    width: 100%
+                    height: 100%
+                    padding: 0px
+                    margin: 0px
+                    margin-top: -15px
+                & #dropdown-place-toggle::after
+                    display: none
             & .text-styling
                 font-family: 'Roboto', sans-serif
                 font-size: 18px
@@ -164,8 +192,8 @@ $birthday-balloons: url("./images/balao.png")
                 border-radius: 25%
                 position: relative  
                 float: left
-                width:  165px
-                height: 165px
+                width:  200px
+                height: 200px
             
         & #nomeFuncionario, & #nomePadrinho
             margin-bottom: 3px
@@ -174,13 +202,7 @@ $birthday-balloons: url("./images/balao.png")
             font-size: 24px
         & #nomePadrinho
             font-size: 18px
-        & .select-place
-            margin-top: 15px
-            & .dropdown-principal
-                border: none
-                padding: 0px   
-                max-height: 35px
-                max-width: 150px
+
     & .carta--azul
         & .form-control
             background-color: $card-strong-color
@@ -190,20 +212,6 @@ $birthday-balloons: url("./images/balao.png")
             font-weight: 500
             &::placeholder
                 color: gray
-        & .dropdown-principal
-            & .dropdown-image
-                align-items: center
-                max-height: 35px
-                max-width: 150px
-                background-color: $card-strong-color
-            & .dropdown-item-style
-                background-color: $card-strong-color
-                padding: 0px
-                border-radius: 2px
-                
-                height: 30px
-                &:hover
-                    opacity: 0.7
         & .form-control-hover
             border: 2px solid gray
     & .carta--branca
@@ -215,20 +223,6 @@ $birthday-balloons: url("./images/balao.png")
             padding: 0
         & .form-control-hover
             border: 2px solid gray
-        & .dropdown-principal
-            & .dropdown-image
-                align-items: center
-                max-height: 35px
-                max-width: 150px
-                background-color: $card-light-color
-            & .dropdown-item-style
-                background-color: $card-light-color
-                padding: 0px
-                border-radius: 2px
-                
-                height: 30px
-                &:hover
-                    opacity: 0.7
     & .text-inputs
             font-family: 'Roboto Mono', sans-serif
             font-size: 12 px

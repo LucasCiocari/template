@@ -1,51 +1,37 @@
 import React from 'react'
 import classNames from "classnames"
+import { Dropdown, DropdownButton } from "react-bootstrap"
 
 import sicrediLogo from "../images/sicredi.png"
 import agibankLogo from "../images/agibank.png"
 
 class Place extends React.Component {
 
-    render(){
+    render() {
 
         const { card, index, handleChangeMap, handleChangeLogo } = this.props;
 
         return (
             <div className="div-do-select">
+
                 <div className="select-place">
-                    <div className="dropdown">
-                        <button
-                            className="btn dropdown-principal "
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                        >
-                            <img src={card.logoSelectValue} className="dropdown-image" />
-                        </button>
-                        <div
-                            className="dropdown-menu dropdown-principal"
-                            aria-labelledby="dropdownMenuButton"
-                        >
-                            <a
-                            className="dropdown-item dropdown-item-style"
-                            onClick={() => {
-                                handleChangeLogo("agibank", card.id);
-                            }}
-                            >
-                                <img src={agibankLogo} className="dropdown-item-style" />
-                            </a>
-                            <a
-                            className="dropdown-item dropdown-item-style"
-                            onClick={() => {
+                    <Dropdown id="dropdown-logo">
+                        <Dropdown.Toggle variant="secondary" id="dropdown-logo-toggle">
+                            <img className="dropdown-image" src={card.logoSelectValue} />
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={() => {
                                 handleChangeLogo("sicredi", card.id);
-                            }}
-                            >
-                                <img src={sicrediLogo} className="dropdown-item-style" />
-                            </a>
-                        </div>
-                    </div>
+                            }}>
+                                <img className="dropdown-image" src={sicrediLogo} />
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={() => {
+                                handleChangeLogo("agibank", card.id);
+                            }}>
+                                <img className="dropdown-image" src={agibankLogo} />
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
 
                 <img
@@ -54,27 +40,25 @@ class Place extends React.Component {
                     alt="sicredi"
                 />
 
-                <select
-                    className={classNames(
-                    "text-styling",
-                    { "select-image--azul": index % 2 == 0 },
-                    { "select-image--branco": index % 2 == 1 },
-                    { "select-text-warning": card.map === "selecione" }
-                    )}
-                    value={card.map}
-                    onChange={event => {
-                    handleChangeMap(event.target.value, card.id);
-                    }}
-                >
-                    <option value="selecione" className="value-default">
-                    SELECIONE LOCAL
-                    </option>
-                    <option value="assis">CAS - Assis Brasil</option>
-                    <option value="digital">PUC - Sicredi Digital</option>
-                    <option value="ibmp">IBM Filial</option>
-                    <option value="downtownibm">CAS - Alberto Bins</option>
-                    <option value="agibankplace">Agibank</option>
-                </select>
+                <Dropdown id="dropdown-place">
+                    <Dropdown.Toggle className={classNames(
+                        "text-styling",
+                        { "select-image--azul": index % 2 == 0 },
+                        { "select-image--branco": index % 2 == 1 },
+                        { "select-text-warning": card.map === "selecione" }
+                    )} variant="secondary" id="dropdown-place-toggle">
+                        {card.map}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item onClick={() => { handleChangeMap("assis", card.id) }} >CAS - Assis Brasil</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handleChangeMap("digital", card.id) }} >PUC - Sicredi Digital</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handleChangeMap("ibmp", card.id) }} >IBM Filial</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handleChangeMap("downtownibm", card.id) }} >CAS - Alberto Bins</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handleChangeMap("agibankplace", card.id) }} >Agibank Mostardeiro</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
             </div>
         )
     }
