@@ -32,7 +32,7 @@ class App extends React.Component {
         logoSelectValue: placeholder
       }
     ],
-    birthdays: [{ id: 1, image: generic, name: "", date: "", place: "" }],
+    birthdays: [{ id: 1, image: generic, name: "", date: "", place: "Selecione Lugar" }],
     toggle: 1,
     bdMonthText: ""
   };
@@ -123,7 +123,7 @@ class App extends React.Component {
           break;
 
         default:
-          console.log("Não foi possível salvar a foto!!!!!!!!!");
+          console.log("Não foi possível salvar a foto");
           break;
       }
     });
@@ -157,13 +157,13 @@ class App extends React.Component {
                 image: generic,
                 name: "",
                 date: "",
-                place: ""
+                place: "Selecione Lugar"
               })
             };
           }
           break;
         default:
-          console.info("qq tu fez errado ai meu?");
+          console.info("Could not add a card");
       }
     });
   };
@@ -243,9 +243,19 @@ class App extends React.Component {
     this.setState(prevState => {
       const newItems = prevState.birthdays;
       const index = newItems.findIndex(card => card.id === id);
-      newItems[index].place = text;
-
-      return { birthdays: newItems };
+      
+      if (text == "sicredi") {
+        newItems[index].place = "Sicredi";
+      }
+      if (text == "agibank") {
+        newItems[index].place = "Agibank"
+      }
+      if (text == "ibm") {
+        newItems[index].place = "IBM"
+      }
+      return {
+        birthdays: newItems
+      };
     });
   };
 

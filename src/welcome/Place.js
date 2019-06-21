@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from "classnames"
-import { Dropdown, DropdownButton } from "react-bootstrap"
+import { Dropdown } from "react-bootstrap"
 
 import sicrediLogo from "../images/sicredi.png"
 import agibankLogo from "../images/agibank.png"

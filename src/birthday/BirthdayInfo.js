@@ -3,6 +3,7 @@ import Textarea from "react-textarea-autosize";
 import DatePicker from "react-datepicker";
 import ReactHoverObserver from "react-hover-observer";
 import classNames from "classnames";
+import { Dropdown } from "react-bootstrap"
 
 class BirthdayInfo extends React.Component {
 
@@ -66,17 +67,19 @@ class BirthdayInfo extends React.Component {
                         onHoverChanged: this.onHoverLocalChanged
                     }}
                 >
-                    <Textarea
-                        minRows={1}
-                        maxRows={2}
-                        value={card.place}
-                        onChange={event => {
-                            handlePlaceBdChange(event.target.value, card.id);
-                        }}
-                        placeholder="Localização"
-                        maxLength={30}
-                        className={classNames("card-bd-place-input", { "card-bd-hover": localIsHovering })}
-                    />
+
+                    <Dropdown id="dropdown-birthday">
+                    <Dropdown.Toggle className={classNames("card-bd-place-input", { "card-bd-hover": localIsHovering })}
+                     variant="secondary" id="dropdown-birthday-toggle">
+                        {card.place}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("sicredi", card.id) }} >Sicredi</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("agibank", card.id) }} >Agibank</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("ibm", card.id) }} >IBM</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
                 </ReactHoverObserver>
             </React.Fragment>
         )
