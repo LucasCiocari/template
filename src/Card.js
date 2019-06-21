@@ -2,11 +2,12 @@ import React from "react";
 import classNames from "classnames";
 import AvatarEditor from "react-avatar-editor";
 import ReactHoverObserver from "react-hover-observer";
-import { Dropdown } from "semantic-ui-react";
-
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
 import placeholder from "./images/placeholder.png";
+import { Modal, Button } from "react-bootstrap";
+import { Slider } from "antd";
+
 
 class Card extends React.Component {
   state = {
@@ -16,8 +17,22 @@ class Card extends React.Component {
     leaderIsHovering: false,
     teamIsHovering: false,
     roleIsHovering: false,
-    selectIsHovering: false
+    selectIsHovering: false,
+    showmodal: false,
+    imageToModal: null,
+    scale: 1.0
   };
+
+  handleShowmodal = () => {
+    this.setState({
+      showmodal: true
+    });
+  }
+  handleCloseModal = () => {
+    this.setState({
+      showmodal: false
+    });
+  }
 
   onHoverNameChanged = ({ isHovering }) => {
     this.setState({
@@ -50,6 +65,14 @@ class Card extends React.Component {
     });
   };
 
+  onClickSave = () => {
+    if (this.editor) {
+      return this.editor.getImageScaledToCanvas()
+    }
+  }
+
+  setEditorRef = (editor) => this.editor = editor
+
   render() {
     const {
       index,
@@ -69,7 +92,10 @@ class Card extends React.Component {
       godparentIsHovering,
       leaderIsHovering,
       teamIsHovering,
-      roleIsHovering
+      roleIsHovering,
+      showmodal,
+      scale
+
     } = this.state;
 
     return (
@@ -188,36 +214,85 @@ class Card extends React.Component {
           </div>
         </div>
 
+
+        {/* Foto Perfil */}
         <div className="perfil">
           <label>
             {this.state.enableInput ? (
-              <input
-                className="hideinput"
-                type="file"
-                name="image"
-                id="image"
-                onChange={event => {
-                  this.setState({
-                    enableInput: false
-                  });
-                  handleChange(card.id, event.target.files[0]);
-                }}
-              />
+              <React.Fragment>
+                <input
+                  className="hideinput"
+                  type="file"
+                  name="image"
+                  id="image"
+                  onChange={event => {
+                    this.setState({
+                      enableInput: false,
+                      imageToModal: event.target.files[0]
+                    });
+                    this.handleShowmodal();
+                  }}
+                />
+
+                <img className="prof-image" src={card.image}></img>
+
+              </React.Fragment>
+
             ) : (
-              <React.Fragment />
-            )}
-            {/* <img src={card.image} alt="Foto"/> */}
-            <AvatarEditor
-              image={card.image}
-              width={220}
-              height={220}
-              border={0}
-              borderRadius={20}
-              className="avatar-editor"
-            />
+
+                <React.Fragment>
+                  <img src={card.image} className="prof-image" onClick={this.handleShowmodal}></img>
+
+                  <Modal show={showmodal} onHide={this.handleCloseModal}>
+                    <Modal.Header closeButton>
+                      <Modal.Title>Escolha o formato da foto</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body style={{textAlign: "center"}}>
+
+                      {/* Avatar Editor */}
+                      
+                        <AvatarEditor
+                          ref={this.setEditorRef}
+                          image={this.state.imageToModal}
+                          width={220}
+                          height={220}
+                          border={0}
+                          borderRadius={20}
+                          className="avatar-editor"
+                        />
+                      
+                      
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                    <div>
+                        <label className="btn btn-warning button-modal">
+                        <input 
+                          hidden 
+                          type="file"
+                          onChange={event => {
+                            this.setState({
+                              enableInput: false,
+                              imageToModal: event.target.files[0]
+                            });
+                          }} /> Trocar foto
+                          </label>
+                      </div>
+                      <Button variant="secondary" onClick={this.handleCloseModal}>
+                        Fechar
+          </Button>
+                      <Button variant="primary" onClick={() => { this.handleCloseModal(); handleChange(card.id, this.onClickSave()); }}>
+                        Salvar Mudanças
+          </Button>
+                    </Modal.Footer>
+                  </Modal>
+                </React.Fragment>
+              )}
           </label>
         </div>
 
+
+        {/* Select local e logo */}
         <div className="div-do-select">
           <div className="select-place">
             <div className="dropdown">
@@ -244,7 +319,7 @@ class Card extends React.Component {
                 >
                   <img src={agibankLogo} className="dropdown-item-style" />
                 </a>
-                
+
                 <a
                   className="dropdown-item dropdown-item-style"
                   onClick={() => {
@@ -253,7 +328,7 @@ class Card extends React.Component {
                 >
                   <img src={sicrediLogo} className="dropdown-item-style" />
                 </a>
-                
+
               </div>
             </div>
           </div>
@@ -286,7 +361,7 @@ class Card extends React.Component {
             <option value="agibankplace">Agibank</option>
           </select>
         </div>
-      </div>
+      </div >
     );
   }
 }

@@ -32,8 +32,6 @@ const Controller = ({onAddCard, handleToggle, toggle, onRemoveCard}) => (
             <span> Template - Aniversario</span>
         </ReactTooltip>
 
-        
-        
 
         <button className="save-photo btn btn-print" data-tip data-for="print" onClick={
                 () => {
