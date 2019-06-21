@@ -357,6 +357,16 @@
   opacity: 0.6;
 }
 
+.avatar-editor-bd {
+  opacity: 1;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+.avatar-editor-bd:hover {
+  opacity: 0.6;
+}
+
 .button-modal {
   margin: 0;
   margin-right: 130px;

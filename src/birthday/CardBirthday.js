@@ -75,7 +75,7 @@ class CardBirthday extends React.Component {
             {this.state.enableInput ? (
               <React.Fragment>
                 <input
-                  className="hideinput"
+                  hidden
                   type="file"
                   name="image"
                   id="image"
@@ -112,7 +112,7 @@ class CardBirthday extends React.Component {
                         height={150}
                         border={0}
                         borderRadius={20}
-                        className="avatar-editor"
+                        className="avatar-editor-bd"
                       />
 
                     </Modal.Body>
