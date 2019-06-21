@@ -1,5 +1,5 @@
 import React from "react";
-import ibmbirthday from "./images/ibm-birthday.png"
+import ibmbirthday from "../images/ibm-birthday.png"
 
 const FooterBirthday = () => (
     <div className="footer-bd">

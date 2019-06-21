@@ -1,8 +1,6 @@
 import React from "react";
 
-
-import logo from './images/sicredi.png';
-import logoIBM from './images/IBM.png';
+import logoIBM from '../images/IBM.png';
 
 const Header = () => (
     <React.Fragment>

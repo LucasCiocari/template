@@ -10,7 +10,7 @@ import digital from "./images/digital.jpg";
 import ibmp from "./images/IBM.jpg";
 import casalbertobins from "./images/cas-alberto-bins.png";
 import agibankplace from "./images/agibank-place.png";
-import noimage from "./images/no-image.png";
+import noimage from "./images/default-image.jpg";
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
 import placeholder from "./images/placeholder.png";
