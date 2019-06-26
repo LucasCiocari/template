@@ -80,8 +80,8 @@ $birthday-balloons: url("./images/balao.png")
                         cursor: pointer
                         border: none
                         align-content: center
-                        font-family: 'Roboto Mono', monospace 
-                        font-weight: 500
+                        font-family: 'Quattrocento', serif
+                        font-weight: 700
                         text-shadow: 1px 1px white
                         text-align: center
                         width: 100%
@@ -89,21 +89,22 @@ $birthday-balloons: url("./images/balao.png")
                             color: red
                             
                 & .card-bd-name-input ,& .card-bd-place-input
-                    background: none
                     border: none
                     width: 100%
                     text-align: center
-                    font-family: 'Roboto Mono', monospace
-                    font-weight: 500
+                    font-family: 'Quattrocento', serif
+                    font-weight: 700
                     text-shadow: 1px 1px white
                     resize: none
                     overflow: hidden
-                    height: 24px
                     color: black
-                
+                    white-space: normal
+                    background-color: transparent
+                    opacity: 1.0
                 & #dropdown-birthday-toggle
                     margin: 0px
                     padding: 0px
+                    
                     &::after
                         display: none
                 
@@ -142,6 +143,7 @@ $birthday-balloons: url("./images/balao.png")
                     margin-top: 20px
                     margin-bottom: -10px
                     align-content: center
+                    white-space: inherit
                     & #dropdown-logo-toggle
                         background-color: inherit
                         width: 100%
@@ -231,7 +233,7 @@ $birthday-balloons: url("./images/balao.png")
         & .form-control-hover
             border: 2px solid gray
     & .text-inputs
-            font-family: 'Roboto Mono', sans-serif
+            font-family: 'Quattrocento', serif
             font-size: 12 px
             
 .app

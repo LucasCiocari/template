@@ -244,14 +244,20 @@ class App extends React.Component {
       const newItems = prevState.birthdays;
       const index = newItems.findIndex(card => card.id === id);
       
-      if (text == "sicredi") {
-        newItems[index].place = "Sicredi";
+      if (text == "downtownibm") {
+        newItems[index].place = "CAS - Alberto Bins";
       }
-      if (text == "agibank") {
+      if (text == "digital") {
+        newItems[index].place = "PUC - Sicredi Digital"
+      }
+      if (text == "assis") {
+        newItems[index].place = "CAS - Assis Brasil"
+      }
+      if (text == "ibmp") {
+        newItems[index].place = "IBM - Filial"
+      }
+      if (text == "agibankplace") {
         newItems[index].place = "Agibank"
-      }
-      if (text == "ibm") {
-        newItems[index].place = "IBM"
       }
       return {
         birthdays: newItems
@@ -287,7 +293,7 @@ class App extends React.Component {
 
       if (value == "agibankplace") {
         newItems[index].imageMap = agibankplace;
-        newItems[index].map = "Agibank Mostardeiro"
+        newItems[index].map = "Agibank"
       }
 
       return {

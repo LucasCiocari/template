@@ -62,12 +62,6 @@ class BirthdayInfo extends React.Component {
                         placeholderText="Escolha a data"
                     />
                 </div>
-                <ReactHoverObserver
-                    {...{
-                        onHoverChanged: this.onHoverLocalChanged
-                    }}
-                >
-
                     <Dropdown id="dropdown-birthday">
                     <Dropdown.Toggle className={classNames("card-bd-place-input", { "card-bd-hover": localIsHovering })}
                      variant="secondary" id="dropdown-birthday-toggle">
@@ -75,12 +69,13 @@ class BirthdayInfo extends React.Component {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        <Dropdown.Item onClick={() => { handlePlaceBdChange("sicredi", card.id) }} >Sicredi</Dropdown.Item>
-                        <Dropdown.Item onClick={() => { handlePlaceBdChange("agibank", card.id) }} >Agibank</Dropdown.Item>
-                        <Dropdown.Item onClick={() => { handlePlaceBdChange("ibm", card.id) }} >IBM</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("assis", card.id) }} >CAS - Assis Brasil</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("digital", card.id) }} >PUC - Sicredi Digital</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("ibmp", card.id) }} >IBM Filial</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("downtownibm", card.id) }} >CAS - Alberto Bins</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("agibankplace", card.id) }} >Agibank </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                </ReactHoverObserver>
             </React.Fragment>
         )
     }

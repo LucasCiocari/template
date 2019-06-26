@@ -55,7 +55,7 @@ class Place extends React.Component {
                         <Dropdown.Item onClick={() => { handleChangeMap("digital", card.id) }} >PUC - Sicredi Digital</Dropdown.Item>
                         <Dropdown.Item onClick={() => { handleChangeMap("ibmp", card.id) }} >IBM Filial</Dropdown.Item>
                         <Dropdown.Item onClick={() => { handleChangeMap("downtownibm", card.id) }} >CAS - Alberto Bins</Dropdown.Item>
-                        <Dropdown.Item onClick={() => { handleChangeMap("agibankplace", card.id) }} >Agibank Mostardeiro</Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handleChangeMap("agibankplace", card.id) }} >Agibank </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
 

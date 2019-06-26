@@ -56,7 +56,7 @@ class PersonInfo extends React.Component {
                   onHoverChanged: this.onHoverNameChanged
                 }}
               >
-                <div className="text-inputs">Funcionario:</div>
+                <div className="text-inputs">Funcionário:</div>
                 <input
                   type="text"
                   value={card.name}
