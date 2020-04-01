@@ -74,6 +74,7 @@ class BirthdayInfo extends React.Component {
                         <Dropdown.Item onClick={() => { handlePlaceBdChange("ibmp", card.id) }} >IBM Filial</Dropdown.Item>
                         <Dropdown.Item onClick={() => { handlePlaceBdChange("downtownibm", card.id) }} >CAS - Alberto Bins</Dropdown.Item>
                         <Dropdown.Item onClick={() => { handlePlaceBdChange("agibankplace", card.id) }} >Agibank </Dropdown.Item>
+                        <Dropdown.Item onClick={() => { handlePlaceBdChange("ibmsp", card.id) }} >IBM Tutóia - SP </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </React.Fragment>

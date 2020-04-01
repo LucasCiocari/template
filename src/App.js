@@ -14,6 +14,7 @@ import noimage from "./images/default-image.jpg";
 import sicrediLogo from "./images/sicredi.png";
 import agibankLogo from "./images/agibank.png";
 import placeholder from "./images/placeholder.png";
+import ibmtutoia from "./images/ibm-tutoia.jpg";
 
 
 class App extends React.Component {
@@ -259,6 +260,9 @@ class App extends React.Component {
       if (text == "agibankplace") {
         newItems[index].place = "Agibank"
       }
+      if (text == "ibmsp") {
+        newItems[index].place = "IBM Tutóia - SP"
+      }
       return {
         birthdays: newItems
       };
@@ -294,6 +298,11 @@ class App extends React.Component {
       if (value == "agibankplace") {
         newItems[index].imageMap = agibankplace;
         newItems[index].map = "Agibank"
+      }
+
+      if (value == "ibmsp") {
+        newItems[index].imageMap = ibmtutoia;
+        newItems[index].map = "IBM Tutóia - SP"
       }
 
       return {
